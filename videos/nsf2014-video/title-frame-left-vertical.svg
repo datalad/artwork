@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1200"
+   height="800"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="title-frame.svg">
+  <defs
+     id="defs2987">
+    <filter
+       inkscape:label="Drop Shadow"
+       id="filter3812"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0.5"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood3814" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite3816" />
+      <feGaussianBlur
+         stdDeviation="10"
+         result="blur"
+         id="feGaussianBlur3818" />
+      <feOffset
+         dx="10"
+         dy="10"
+         result="offset"
+         id="feOffset3820" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite3822" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="818.02001"
+     inkscape:cy="408.09106"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(57.8,618.09344)">
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+       x="568"
+       y="-503.35208"
+       id="text3000"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3002"
+         x="568"
+         y="-503.35208" /></text>
+    <g
+       id="g3043"
+       transform="matrix(0,-1,1,0,549.9152,516.82735)">
+      <rect
+         transform="matrix(1.1108673,0,0,0.28267406,324.35035,-604.40455)"
+         y="10.362183"
+         x="14"
+         height="233"
+         width="712"
+         id="rect3006"
+         style="color:#000000;fill:#4a4a4a;fill-opacity:0.61111109;fill-rule:nonzero;stroke:#000977;stroke-width:1.78453839;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3812);enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3824"
+         y="-573.63782"
+         x="368"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed"
+           y="-573.63782"
+           x="368"
+           id="tspan3826"
+           sodipodi:role="line">Yaroslav O. Halchenko (USA) &amp; Michael Hanke (Germany)</tspan><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed"
+           id="tspan3828"
+           y="-548.63782"
+           x="368"
+           sodipodi:role="line">Dartmouth College &amp; Magdeburg University</tspan><tspan
+           style="font-size:20px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Oblique"
+           id="tspan3836"
+           y="-523.63782"
+           x="368"
+           sodipodi:role="line" /><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed"
+           id="tspan3832"
+           y="-498.63782"
+           x="368"
+           sodipodi:role="line" /><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed"
+           id="tspan3830"
+           y="-473.63782"
+           x="368"
+           sodipodi:role="line" /></text>
+    </g>
+    <g
+       id="g3052"
+       transform="matrix(0,-1,1,0,1287.8752,518.86727)">
+      <rect
+         style="color:#000000;fill:#4a4a4a;fill-opacity:0.61111109;fill-rule:nonzero;stroke:#000977;stroke-width:1.90259695;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3812);enable-background:accumulate"
+         id="rect3023"
+         width="712"
+         height="233"
+         x="14"
+         y="10.362183"
+         transform="matrix(1.1108673,0,0,0.24868192,324.35035,-210.05231)" />
+      <text
+         xml:space="preserve"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+         x="368"
+         y="-185.63782"
+         id="text3005"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="368"
+           y="-185.63782"
+           style="font-size:20px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Oblique"
+           id="tspan3013">CRCNS US-German Data Sharing: DataLad - converging catalogues,</tspan><tspan
+           sodipodi:role="line"
+           x="368"
+           y="-160.63782"
+           style="font-size:20px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Oblique"
+           id="tspan3015">warehouses, and deployment  logistics  into a federated 'data distribution'</tspan><tspan
+           sodipodi:role="line"
+           x="368"
+           y="-135.63782"
+           id="tspan3017"
+           style="font-size:20px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Oblique" /><tspan
+           sodipodi:role="line"
+           x="368"
+           y="-110.63782"
+           id="tspan3019"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed" /><tspan
+           sodipodi:role="line"
+           x="368"
+           y="-85.637817"
+           id="tspan3021"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:semi-condensed;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Semi-Condensed" /></text>
+    </g>
+  </g>
+</svg>
