@@ -1,0 +1,300 @@
+%-*- mode: latex; fill-column: 70 -*-
+% ex: set sts=4 ts=4 sw=4 et tw=70:
+%&pdflatex
+
+\documentclass[letterpaper,landscape]{report}
+\usepackage[landscape,margin=0.5cm]{geometry}
+\usepackage{color}
+\usepackage{flowfram}
+%\usepackage{booktabs}           % for rules in tables
+\usepackage{tabularx}           % for column-width tables
+\usepackage[table]{xcolor}      % color control
+
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{multicol}
+\usepackage{wrapfig}
+%\setlength{\columnseprule}{1pt} % for visible divider
+\setlength{\columnsep}{1cm}
+
+\newcommand{\phttp}[1]{\href{http://#1}{#1}}
+\newcommand{\ie}[0]{\emph{i.e.},\ }
+\newcommand{\eg}[0]{\emph{e.g.},\ }
+\newcommand{\etc}[0]{\emph{etc.}}
+
+
+\usepackage{graphicx}
+\graphicspath{
+ {../}
+ {../../datalad.org/src/content/pics/}
+}
+
+\usepackage{enumitem}           % useful for control of listings
+\usepackage[compact,raggedright]{titlesec}
+\usepackage{comment}
+
+\newcommand{\epigraph}[3]{\textit{#1}\linebreak \vspace{-1.5em} \begin{flushright}\hspace{5em}\ --\ #2\linebreak\small{#3} \end{flushright}}
+
+\pagestyle{empty}
+\parindent=0pt
+
+% Attempts to change bg color of *section headings
+%\definecolor{secbgcol}{rgb}{0.9, 0.85, 0.85}
+%\titleformat{\section}
+%{\color{red}\normalfont\Large\bfseries}{\ndsection}{1em}{}
+%\titleformat{\subsection}
+%{\color{red}\normalfont\large\bfseries}{\begin{flushright}\hfill\thesubsection
+%  \end{flushright}}{1em}{}
+%
+%\usepackage{pstricks}
+
+% To create tables within multicols
+\makeatletter
+\newenvironment{ndtable}
+  {\def\@captype{table}}
+  {}
+
+
+\newcommand{\ndheading}[3]{%
+\vspace{0.5em}
+\begin{ndtable}%
+\rowcolors[\hline]{1}{#2}{} \arrayrulecolor{#3}
+\begin{tabularx}{\columnwidth}{>{\centering\arraybackslash}X}\vspace{-.5em}\normalfont\large\bfseries
+  #1\vspace{0.05em}\\\end{tabularx}
+\end{ndtable}
+\vspace{-.5em}
+}
+
+\definecolor{secfgcol}{RGB}{215, 6, 83}
+\definecolor{secbgcol}{RGB}{255, 241, 248}
+\newcommand{\ndsection}[1]{\ndheading{#1}{secbgcol}{secfgcol}}
+\newcommand{\ndsubsection}[1]{\ndheading{#1}{secbgcol}{secfgcol}}
+
+
+\begin{document}
+
+%%
+%% DEBIAN
+%%
+\begin{multicols}{3}    % 3 columns
+
+% TODO: Most probably git-annex will just get 1-2 columns on the 2nd page
+
+\begin{center}
+\noindent
+\includegraphics[width=0.5\columnwidth]{borrowed/git-annex-logo}
+
+\url{http://git-annex.branchable.com}
+
+% \hrule
+\end{center}
+\vspace{-1em}
+
+\ndsection{git-annex}
+
+is a distributed version control system for large files developed by
+Joey Hess.
+
+\ndsubsection{git-annex features}
+
+\columnbreak
+\ndsubsection{git-annex use-cases}
+
+\ndsubsection{git-annex 101}
+
+
+
+\columnbreak
+\ndsubsection{How to install git-annex}
+
+\ndsubsection{How to get support}
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+%\item[Overview]
+
+%\item[GUI]
+%  Use \emph{Synaptic Package Manager}
+\item[On Debian systems]
+  \texttt{reportbug git-annex}
+\item[Community support]
+  \url{http://git-annex.branchable.com/bugs}
+\item[IRC] \#git-annex at OFTC network
+\end{description}
+
+
+\ndsubsection{Acknowledgements}
+
+\end{multicols}
+
+
+\pagebreak
+%%
+%% DataLad
+%%
+\begin{multicols}{3}    % 3 columns
+
+%\section*{DataLad}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{logo1}\\
+\url{http://datalad.org}
+\end{center}
+
+\ndsection{DataLad}
+
+aims to simplify and thus facilitate delivery and sharing of
+scientific data through establishing a federated data distribution.
+Although originally aiming to deliver public datasets in neuroimaging
+field of neuroscience, DataLad will be easy to adopt and/or extend for
+any field of endeavor.
+
+\ndsubsection{DataLad FAQ}
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[Federated?] It is impractical to distribute data through
+  distribution mechanisms developed \eg\ by Linux distributions, where
+  content is contained within packages available from the central
+  location (or its mirrors).  DataLad will only collect, unify,
+  monitor, and expose through convenient interfaces data available
+  across a wide range of data providers -- data sharing initiatives,
+  curated collections, etc.
+
+\item[Distributed?] DataLad uses distributed version control
+  \href{http://git-scm.com}{Git} and built on top of it
+  \href{http://git-annex.branchable.com}{Git-annex} for data
+  logistics.  Git-annex enables \emph{distributed} operation where
+  clones of the datasets could be made available across multiple sites
+  and media without loosing track of data and meta-information (such
+  as versioning).
+
+\end{description}
+
+\def\blank{\hspace{0em}\vspace{-1em}}
+%\columnbreak
+
+\ndsubsection{Planned datasets coverage}
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[\phttp{OpenfMRI.org}] curated fMRI (and EEG) datasets
+\item[\phttp{HumanConnectome.org}] anatomical, functional,
+  diffusion MRI data from 1,200 subjects
+\item[\phttp{CRCNS.org}] curated electrophysiological and neuroimaging
+  datasets
+\item[\href{http://fcon\_1000.projects.nitrc.org}{INDI}] collation of various datasets and initiatives (functional
+  connectome, etc)
+\end{description}
+
+\ndsubsection{Planned integration}
+
+We will expose and interface to the datasets available from
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[\href{http://xnat.org}{XNAT}] widely used imaging informatics
+  platform used by \phttp{HumanConnectome.org},
+  \href{http://nitrc.org/ir}{NITRC-IR},
+  \href{http://openfmri.org}{OpenfMRI} and others
+\item[\href{http://coins.mrn.org}{COINS}] web-based neuroimaging and
+  neuropsychology software suite hosting many neuroimaging datasets
+\end{description}
+
+\vspace{0.5em} Through the joint venture with the
+\href{http://neuro.debian.net}{NeuroDebian} project, DataLad will also
+expose itself as a \href{http://www.debian.org}{Debian} APT
+repository, making it possible to \emph{install} and \emph{upgrade}
+datasets using conventional tools such as \texttt{apt} and
+\texttt{aptitude}.
+
+
+\ndsubsection{Principal Schema}
+% TODO: figure out how to make it spread over two columns
+\includegraphics[width=\linewidth]{datalad-openfmri-demo_sw.png}
+
+\ndsubsection{How could you help \emph{both of us}}
+
+Sharing scientific data is not yet as easy as it could and should be.
+Adhering to the following guidelines could help you to avoid
+unnecessary burden, thus making sharing easy and thus more rewarding,
+but the motto could be \emph{Be Ready}
+
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[Legal:] Clear up and state ahead ownership (copyright) and
+  (public domain dedication) license for your dataset. Provision
+  public sharing in your consent forms \textbf{BEFORE} the data
+  collection begins
+\item[Keep detail:] Keep original detail -- copies of acquisition
+  protocols, exam cards, and the DICOMs (not only NIfTIs).
+
+\item[Be comprehensible:] Adhere to a homogeneous files structure,
+  adopt and extend if necessary some standard
+  (\eg\ openfmri). Consider providing dataset descriptor
+  (\eg\ \url{http://dataprotocols.org/data-packages})
+
+\item[Prepare to be reproduced:] Analyze already pre-processed
+  anonymized data (where possible)
+
+\item[Version your data:] even close to bare origin data might be
+  \emph{screwed} and require revisioning.  You could
+  \begin{itemize}[nolistsep,leftmargin=1pc,style=nextline]
+  \item Use \href{http://git-annex.branchable.com}{Git-annex} for your
+    data
+  \item Consistently version older versions with the date in the
+    suffix, \eg how \href{http://www.1000genomes.org}{1000genomes}
+    project does
+  \item If storing data in \href{http://aws.amazon.com/s3}{AWS S3},
+    turn on versioning for your bucket(s)
+  \end{itemize}
+
+
+\item[Think about longevity:] Deposit datasets to some public/backed
+  provider (\eg\ \href{http://openfmri.org}{OpenfMRI},
+  \href{http://figshare.com}{figshare})
+
+\end{description}
+
+\ndsubsection{How could you help \emph{DataLad}}
+
+We are picking the development speed and hope to deliver an initial
+prototype within a year.  Meanwhile we would appreciate if you
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[Follow\&Share]
+% replace with icons for twitter/ g+
+\textit{Twitter:} \url{http://twitter.com/datalad}\\
+\textit{Google+:} \url{http://plus.google.com/+DataladOrg}
+\textit{Blog:} \url{http://datalad.org}
+\item[Discuss]
+\url{https://groups.google.com/forum/#!forum/datalad}
+\item[Complain\&Suggest]
+\url{http://github.com/datalad/datalad/issues}\\
+We are interested in use-cases, interesting datasets, feedback on
+design decisions, alpha-users, \emph{etc.}
+\item[Contribute]
+\url{http://github.com/datalad/datalad/pulls}
+\end{description}
+
+
+\ndsubsection{Acknowledgements}
+
+DataLad project development is co-funded by the US National Science
+Foundation
+(\href{http://www.nsf.gov/awardsearch/showAward?AWD\_ID=1429999}{NSF
+  1429999} and the German Federal Ministry of Education and Research
+(BMBF 01GQ1411)
+
+\vspace{1em}
+\hspace{1em}\includegraphics[width=0.4\columnwidth]{nsf1.jpg}
+\hfill
+\includegraphics[width=0.4\columnwidth]{bmbf_logo.jpg}\hspace{1em}
+
+%\columnbreak
+\end{multicols}
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% whizzy-viewers: (("-pdf" "okular") ("-dvi" "xdvi") ("-ps" "gv"))
+%%% End:
