@@ -1,0 +1,3 @@
+[submodule "datalad.org"]
+	path = datalad.org
+	url = git://github.com/datalad/datalad.org
