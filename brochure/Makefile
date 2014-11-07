@@ -9,7 +9,7 @@ include LaTeX.mk
 .PHONY: pics
 pics:
 	@$(MAKE) -C ../datalad.org/src/content/pics/
-	@$(MAKE) -C ../datalad.org/src/content/pics/ logo1.pdf
+	@$(MAKE) -C ../datalad.org/src/content/pics/ logo1.pdf borrowed/git-annex-logo.pdf
 
 # Can't be used as is since .gitignore would be searched for in this
 # directory
