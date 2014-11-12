@@ -22,11 +22,14 @@
 \newcommand{\eg}[0]{\emph{e.g.},\ }
 \newcommand{\etc}[0]{\emph{etc.}}
 
+\usepackage{tikz}
+\usetikzlibrary{calc}
 
 \usepackage{graphicx}
 \graphicspath{
  {../}
  {../datalad.org/src/content/pics/}
+ {../artwork/pics/}
 }
 
 \usepackage{enumitem}           % useful for control of listings
@@ -73,6 +76,7 @@
 
 \begin{document}
 
+\vspace{-1.5em}
 %%
 %% DEBIAN
 %%
@@ -93,45 +97,100 @@
 \ndsection{git-annex}
 
 is a distributed version control system for large files developed by
-Joey Hess.
+Joey Hess.  git-annex enriches regular \href{http://git-scm.com}{git}
+repositories with meta-information and facilities for retrieving
+and/or sending data from/to remote locations.  Data load itself then
+is not directly committed to git, making git-annex repositories
+lightweight and easily manageable, while still providing requested
+data upon your wish.
 
 \ndsubsection{git-annex features}
 
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+
+\item[Data versioning] Every file is identified by its checksum (\eg\
+  SHA256), thus guaranteeing unambiguous versioning
+
+\item[Special remotes] Besides accessing data from other git remotes
+  (\eg via ssh), data could be offloaded to the cloud (\eg\ Amazon S3
+  and Glacier), or just some host (via ssh or rsync)
+
+\item[Association with web origins] Every file could have a list of
+  URLs from which this file could be downloaded
+
+\item[Encryption] Data could be uploaded encrypted to remotes,
+  guaranteeing privacy even when offloading sensitive data
+
+\item[Synchronization] \emph{git-annex assistant} provides
+  Dropbox-like operation: keep your data files in sync, or
+  automatically offloaded, backed-up, \etc across multiple hosts
+
+\item[Semi-compatible with GitHub] Since git-annex repository is just
+  a git repository, it could be pushed to GitHub.  The content of data
+  files though would need to be stored in some \emph{Special remote}
+  or have URLs associated
+\end{description}
+
 \columnbreak
-\ndsubsection{git-annex use-cases}
+%\ndsubsection{git-annex use-cases}
 
 \ndsubsection{git-annex 101}
 
+See \url{https://git-annex.branchable.com/walkthrough/} for more
+details and examples
 
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[\texttt{git init;  git annex init "repo name"}]
+Initialize both git and git-annex
+\item[\texttt{git annex add my\_cool\_big\_file}]
+Add file(s) under control of git-annex (they become symlinks)
+\item[\texttt{git commit -a -m "message"}]
+Commit as you usually do with git
+\item[\texttt{git annex move my\_cool\_big\_file --to usbdrive}]
+Offload the file to a repository you named ``usbdrive''
+\item[\texttt{git annex whereis my\_cool\_big\_file}]
+Check where file is available from
+\item[\texttt{git annex get my\_cool\_big\_file}]
+Fetch file back to local repository
+\end{description}
 
-\columnbreak
+\ndsubsection{Neuroimaging datasets to play with}
+
+We have made some datasets already available as git-annex
+repositories, so \texttt{git clone ...}
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[\texttt{http://psydata.ovgu.de/forrest\_gump/.git/}] Unique 7T MRI,
+  fMRI, DTI dataset acquired during rich auditory stimulation. See\\
+  \url{http://studyforrest.org} for more information
+\item[\texttt{git://github.com/datalad/nih--videocast}] git-annex
+  ``mirror'' of \url{http://videocast.nih.gov}, created and updated by
+  \texttt{datalad crawl}
+\item[\texttt{http://data.pymvpa.org/datasets/haxby2001/.git/}]
+  De-facto canonical dataset for testing and demonstrating MVPA
+  techniques, originating from a 2001 study by Haxby et. al.
+\end{description}
+
 \ndsubsection{How to install git-annex}
+
+\texttt{apt-get install git-annex}
+
+See \url{https://git-annex.branchable.com/install} for more (OS X,
+Windows, Linuxes, Android)
 
 \ndsubsection{How to get support}
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
-%\item[Overview]
-
-%\item[GUI]
-%  Use \emph{Synaptic Package Manager}
 \item[On Debian systems]
-  \texttt{reportbug git-annex}
+ \texttt{reportbug git-annex}
 \item[Community support]
   \url{http://git-annex.branchable.com/bugs}
 \item[IRC] \#git-annex at OFTC network
 \end{description}
 
+\columnbreak
 
-\ndsubsection{Acknowledgements}
-
-\end{multicols}
-
-
-\pagebreak
-%%
-%% DataLad
-%%
-\begin{multicols}{3}    % 3 columns
+%\ndsubsection{Acknowledgements}
 
 %\section*{DataLad}
 \begin{center}
@@ -143,19 +202,18 @@ Joey Hess.
 
 aims to simplify and thus facilitate delivery and sharing of
 scientific data through establishing a federated data distribution.
-Although originally aiming to deliver public datasets in neuroimaging
-field of neuroscience, DataLad will be easy to adopt and/or extend for
-any field of endeavor.
+Originally aiming to deliver public datasets in neuroimaging field of
+neuroscience, DataLad will be easy to adopt for any field of endeavor.
 
 \ndsubsection{DataLad FAQ}
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[Federated?] It is impractical to distribute data through
-  distribution mechanisms developed \eg\ by Linux distributions, where
+  \emph{classical} distribution mechanisms, where
   content is contained within packages available from the central
   location (or its mirrors).  DataLad will only collect, unify,
   monitor, and expose through convenient interfaces data available
-  across a wide range of data providers -- data sharing initiatives,
-  curated collections, etc.
+  across a wide range of data providers.
+% -- data sharing initiatives,  curated collections, etc.
 
 \item[Distributed?] DataLad uses distributed version control
   \href{http://git-scm.com}{Git} and built on top of it
@@ -177,9 +235,27 @@ any field of endeavor.
   diffusion MRI data from 1,200 subjects
 \item[\phttp{CRCNS.org}] curated electrophysiological and neuroimaging
   datasets
-\item[\href{http://fcon\_1000.projects.nitrc.org}{INDI}] collation of various datasets and initiatives (functional
+\item[\href{http://fcon\_1000.projects.nitrc.org}{INDI}] a collation of various datasets and initiatives (functional
   connectome, etc)
 \end{description}
+
+\end{multicols}
+
+
+\pagebreak
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(7mm,5mm)$) {
+     %\includegraphics{imgfile}
+     %\includegraphics[width=0.4\linewidth]{datalad-openfmri-demo_sw.png}
+     \includegraphics[width=0.65\linewidth]{datalad-whiteboard.png}
+  };
+\end{tikzpicture}
+\vspace{-2.5em}
+
+%%
+%% DataLad
+%%
+\begin{multicols}{3}    % 3 columns
 
 \ndsubsection{Planned integration}
 
@@ -192,32 +268,34 @@ We will expose and interface to the datasets available from
   \href{http://openfmri.org}{OpenfMRI} and others
 \item[\href{http://coins.mrn.org}{COINS}] web-based neuroimaging and
   neuropsychology software suite hosting many neuroimaging datasets
+\item[\href{http://neuro.debian.net}{NeuroDebian}] Through the joint
+  venture with the \href{http://neuro.debian.net}{NeuroDebian}
+  project, DataLad will also expose itself as a
+  \href{http://www.debian.org}{Debian} APT repository, making it
+  possible to \emph{install} and \emph{upgrade} datasets using
+  conventional tools such as \texttt{apt} and \texttt{aptitude}.
+  Data \emph{installation} would become as easy as of software.
 \end{description}
 
-\vspace{0.5em} Through the joint venture with the
-\href{http://neuro.debian.net}{NeuroDebian} project, DataLad will also
-expose itself as a \href{http://www.debian.org}{Debian} APT
-repository, making it possible to \emph{install} and \emph{upgrade}
-datasets using conventional tools such as \texttt{apt} and
-\texttt{aptitude}.
 
+%\ndsubsection{Principal Schema}
+\vspace{27em}
 
-\ndsubsection{Principal Schema}
-% TODO: figure out how to make it spread over two columns
-\includegraphics[width=\linewidth]{datalad-openfmri-demo_sw.png}
+{\tiny \color{white}.}
+\columnbreak
 
 \ndsubsection{How could you help \emph{both of us}}
 
 Sharing scientific data is not yet as easy as it could and should be.
 Adhering to the following guidelines could help you to avoid
-unnecessary burden, thus making sharing easy and thus more rewarding,
-but the motto could be \emph{Be Ready}
+unnecessary burden, thus making sharing easier and thus more rewarding.
+Overall motto is \emph{Be Ready} and ...
 
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
-\item[Legal:] Clear up and state ahead ownership (copyright) and
+\item[Stay legit:] Clear up and state ahead ownership (copyright) and
   (public domain dedication) license for your dataset. Provision
-  public sharing in your consent forms \textbf{BEFORE} the data
+  public sharing in your consent forms\\ \textbf{BEFORE} the data
   collection begins
 \item[Keep detail:] Keep original detail -- copies of acquisition
   protocols, exam cards, and the DICOMs (not only NIfTIs).
@@ -225,10 +303,17 @@ but the motto could be \emph{Be Ready}
 \item[Be comprehensible:] Adhere to a homogeneous files structure,
   adopt and extend if necessary some standard
   (\eg\ openfmri). Consider providing dataset descriptor
-  (\eg\ \url{http://dataprotocols.org/data-packages})
+  (\eg\\ \url{http://dataprotocols.org/data-packages})
 
 \item[Prepare to be reproduced:] Analyze already pre-processed
   anonymized data (where possible)
+
+\end{description}
+\vspace{27em}
+{\tiny \color{white}.}
+\columnbreak
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 
 \item[Version your data:] even close to bare origin data might be
   \emph{screwed} and require revisioning.  You could
@@ -253,7 +338,6 @@ but the motto could be \emph{Be Ready}
 
 We are picking the development speed and hope to deliver an initial
 prototype within a year.  Meanwhile we would appreciate if you
-
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[Follow\&Share]
 % replace with icons for twitter/ g+
@@ -274,9 +358,7 @@ design decisions, alpha-users, \emph{etc.}
 \ndsubsection{Acknowledgements}
 
 DataLad project development is co-funded by the US National Science
-Foundation
-(\href{http://www.nsf.gov/awardsearch/showAward?AWD\_ID=1429999}{NSF
-  1429999} and the German Federal Ministry of Education and Research
+Foundation (\href{http://www.nsf.gov/awardsearch/showAward?AWD\_ID=1429999}{1429999}) and the German Federal Ministry of Education and Research
 (BMBF 01GQ1411)
 
 \vspace{1em}
@@ -286,7 +368,6 @@ Foundation
 
 %\columnbreak
 \end{multicols}
-
 
 
 \end{document}
