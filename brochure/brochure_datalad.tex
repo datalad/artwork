@@ -99,10 +99,10 @@
 is a distributed version control system for large files developed by
 Joey Hess.  git-annex enriches regular \href{http://git-scm.com}{git}
 repositories with meta-information and facilities for retrieving
-and/or sending data from/to remote locations.  Data load itself then
+and/or sending data from/to remote locations.  Actual data itself
 is not directly committed to git, making git-annex repositories
-lightweight and easily manageable, while still providing requested
-data upon your wish.
+lightweight and easily manageable, while still providing access to
+all data upon request.
 
 \ndsubsection{git-annex features}
 
@@ -113,21 +113,21 @@ data upon your wish.
 
 \item[Special remotes] Besides accessing data from other git remotes
   (\eg via ssh), data could be offloaded to the cloud (\eg\ Amazon S3
-  and Glacier), or just some host (via ssh or rsync)
+  and Glacier), or just some remote computer (via ssh or rsync)
 
 \item[Association with web origins] Every file could have a list of
-  URLs from which this file could be downloaded
+  URLs from which it could be downloaded
 
-\item[Encryption] Data could be uploaded encrypted to remotes,
+\item[Encryption] Data could be uploaded to remotes encrypted,
   guaranteeing privacy even when offloading sensitive data
 
 \item[Synchronization] \emph{git-annex assistant} provides
   Dropbox-like operation: keep your data files in sync, or
   automatically offloaded, backed-up, \etc across multiple hosts
 
-\item[Semi-compatible with GitHub] Since git-annex repository is just
-  a git repository, it could be pushed to GitHub.  The content of data
-  files though would need to be stored in some \emph{Special remote}
+\item[Semi-compatible with GitHub] As a git-annex repository is just
+  a git repository, it can be pushed to GitHub.  The content of data
+  files, however, need to be stored in some \emph{Special remote}
   or have URLs associated
 \end{description}
 
@@ -167,8 +167,8 @@ repositories, so \texttt{git clone ...}
   ``mirror'' of \url{http://videocast.nih.gov}, created and updated by
   \texttt{datalad crawl}
 \item[\texttt{http://data.pymvpa.org/datasets/haxby2001/.git/}]
-  De-facto canonical dataset for testing and demonstrating MVPA
-  techniques, originating from a 2001 study by Haxby et. al.
+  Seminal work by Haxby et al. (2001) for testing and demonstrating MVPA
+  techniques
 \end{description}
 
 \ndsubsection{How to install git-annex}
@@ -201,7 +201,7 @@ Windows, Linuxes, Android)
 \ndsection{DataLad}
 
 aims to simplify and thus facilitate delivery and sharing of
-scientific data through establishing a federated data distribution.
+scientific data by establishing a federated data distribution.
 Originally aiming to deliver public datasets in neuroimaging field of
 neuroscience, DataLad will be easy to adopt for any field of endeavor.
 
@@ -228,7 +228,7 @@ neuroscience, DataLad will be easy to adopt for any field of endeavor.
 \def\blank{\hspace{0em}\vspace{-1em}}
 %\columnbreak
 
-\ndsubsection{Planned datasets coverage}
+\ndsubsection{Planned dataset coverage}
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[\phttp{OpenfMRI.org}] curated fMRI (and EEG) datasets
 \item[\phttp{HumanConnectome.org}] anatomical, functional,
