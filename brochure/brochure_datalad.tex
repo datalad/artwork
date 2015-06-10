@@ -113,13 +113,13 @@ all data upon request.
   SHA256), thus guaranteeing unambiguous versioning
 
 \item[Special remotes] Besides accessing data from other git remotes
-  (\eg via ssh), data could be offloaded to the cloud (\eg\ Amazon S3
+  (\eg via ssh), data can be offloaded to the cloud (\eg\ Amazon S3
   and Glacier), or just some remote computer (via ssh or rsync)
 
-\item[Association with web origins] Every file could have a list of
-  URLs from which it could be downloaded
+\item[Association with web origins] Every file can have a list of
+  URLs from which it can be downloaded
 
-\item[Encryption] Data could be uploaded to remotes encrypted,
+\item[Encryption] Data can be uploaded to remotes encrypted,
   guaranteeing privacy even when offloading sensitive data
 
 \item[Synchronization] \emph{git-annex assistant} provides
@@ -129,7 +129,7 @@ all data upon request.
 \item[Semi-compatible with GitHub] As a git-annex repository is just
   a git repository, it can be pushed to GitHub.  The content of data
   files, however, need to be stored in some \emph{Special remote}
-  or have URLs associated
+  or have associated download URLs
 \end{description}
 
 \columnbreak
@@ -178,7 +178,7 @@ repositories, so \texttt{git clone ...}
 \texttt{apt-get install git-annex}
 
 See \url{https://git-annex.branchable.com/install} for more (OS X,
-Windows, Linuxes, Android)
+Windows, Linux, Android)
 
 \ndsubsection{How to get support}
 
@@ -204,8 +204,9 @@ Windows, Linuxes, Android)
 
 aims to simplify and thus facilitate delivery and sharing of
 scientific data by establishing a federated data distribution.
-Originally aiming to deliver public datasets in neuroimaging field of
-neuroscience, DataLad will be easy to adopt for any field of endeavor.
+While initially aiming to deliver public neuroimaging datasets,
+DataLad will be easy to adopt more neuroscience data or other fields
+of endeavor.
 
 \ndsubsection{DataLad FAQ}
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
@@ -325,7 +326,7 @@ Overall motto is \emph{Be Ready} and ...
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 
 \item[Version your data:] even data close to bare origin might be
-  \emph{screwed} and require revisioning.  You could
+  \emph{screwed} and require versioning.  You could
   \begin{itemize}[nolistsep,leftmargin=1pc,style=nextline]
   \item use \href{http://git-annex.branchable.com}{Git-annex} for your
     data
@@ -337,8 +338,8 @@ Overall motto is \emph{Be Ready} and ...
   \end{itemize}
 
 
-\item[Think about longevity:] Deposit datasets to some public/backed
-  provider (\eg\ \href{http://openfmri.org}{OpenfMRI},
+\item[Think about longevity:] Deposit datasets to some public community
+  repository (\eg\ \href{http://openfmri.org}{OpenfMRI},
   \href{http://figshare.com}{figshare})
 
 \end{description}
@@ -367,7 +368,7 @@ design decisions, alpha-users, \emph{etc.}
 
 \ndsubsection{Acknowledgements}
 
-DataLad project development is co-funded by the US National Science
+This project is co-funded by the US National Science
 Foundation (\href{http://www.nsf.gov/awardsearch/showAward?AWD\_ID=1429999}{1429999}) and the German Federal Ministry of Education and Research
 (BMBF 01GQ1411)
 
