@@ -136,7 +136,7 @@ all data upon request.
 
 \ndsubsection{git-annex 101}
 
-Just learn few more commands in addition to stock \emph{git}.
+Just learn few new commands in addition to stock \emph{git}.
 \url{https://git-annex.branchable.com/walkthrough}\\
 provides more details and examples
 
@@ -144,7 +144,7 @@ provides more details and examples
 \item[\texttt{git init;  git annex init "repo name"}]
 Initialize both git and git-annex
 \item[\texttt{git annex add my\_cool\_big\_file}]
-Add file(s) under control of git-annex (they become symlinks)
+Add file(s) under control of git-annex % (they become symlinks)
 \item[\texttt{git commit -a -m "message"}]
 Commit as you usually do with git
 \item[\texttt{git annex move my\_cool\_big\_file --to usbdrive}]
@@ -152,7 +152,7 @@ Offload the file to a repository you named ``usbdrive''
 \item[\texttt{git annex whereis my\_cool\_big\_file}]
 Check where file is available from
 \item[\texttt{git annex get my\_cool\_big\_file}]
-Fetch file back to local repository
+Fetch file back to the local repository
 \end{description}
 
 \ndsubsection{Neuroimaging datasets to play with}
@@ -195,7 +195,7 @@ Windows, Linuxes, Android)
 
 %\section*{DataLad}
 \begin{center}
-\includegraphics[width=0.5\columnwidth]{logo1}\\
+\includegraphics[width=0.5\columnwidth,trim=0 27 0 0,clip]{datalad-logo2}\\
 \url{http://datalad.org}
 \end{center}
 
@@ -213,7 +213,7 @@ neuroscience, DataLad will be easy to adopt for any field of endeavor.
   content is contained within packages available from the central
   location (or its mirrors).  DataLad will only collect, unify,
   monitor, and expose through convenient interfaces data available
-  across a wide range of data providers.
+  across a wide range of data providers
 % -- data sharing initiatives,  curated collections, etc.
 
 \item[Distributed?] DataLad uses distributed version control
@@ -222,7 +222,7 @@ neuroscience, DataLad will be easy to adopt for any field of endeavor.
   logistics.  Git-annex enables \emph{distributed} operation where
   clones of the datasets could be made available across multiple sites
   and media without loosing track of data and meta-information (such
-  as versioning).
+  as versioning)
 
 \end{description}
 
@@ -269,6 +269,9 @@ We will expose and interface to the datasets available from
   \href{http://openfmri.org}{OpenfMRI} and others
 \item[\href{http://coins.mrn.org}{COINS}] web-based neuroimaging and
   neuropsychology software suite hosting many neuroimaging datasets
+\item[\href{http://academictorrents.com}{Academic Torrents}]
+  collection of academic datasets delivered as
+  \href{http://en.wikipedia.org/wiki/BitTorrent}{Torrents}
 \item[\href{http://neuro.debian.net}{NeuroDebian}] Through the joint
   venture with the \href{http://neuro.debian.net}{NeuroDebian}
   project, DataLad will also expose itself as a
@@ -294,20 +297,24 @@ Overall motto is \emph{Be Ready} and ...
 
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
-\item[Stay legit:] Clear up and state ahead ownership (copyright) and
+\item[Stay legit:] clear up and state ahead ownership (copyright) and
   (public domain dedication) license for your dataset. Provision
   public sharing in your consent forms\\ \textbf{BEFORE} the data
-  collection begins
-\item[Keep detail:] Keep original detail -- copies of acquisition
-  protocols, exam cards, and the DICOMs (not only NIfTIs).
+  collection begins:\\ \url{https://open-brain-consent.readthedocs.org}
 
-\item[Be comprehensible:] Adhere to a homogeneous files structure,
+\item[Keep detail:] keep original detail -- copies of acquisition
+  protocols, exam cards, and the DICOMs (not only NIfTIs)
+
+\item[Be comprehensible:] adhere to a homogeneous files structure,
   adopt and extend if necessary some standard
   (\eg\ openfmri). Consider providing dataset descriptor
-  (\eg\\ \url{http://dataprotocols.org/data-packages})
+  (\eg\ 
+ \href{http://www.w3.org/TR/2015/NOTE-hcls-dataset-20150514/}{W3C HCLS
+ Dataset descriptors} or
+ \url{http://dataprotocols.org/data-packages})
 
-\item[Prepare to be reproduced:] Analyze already pre-processed
-  anonymized data (where possible)
+\item[Prepare to be reproduced:] analyze already pre-processed
+  anonymized data% (where possible)
 
 \end{description}
 \vspace{27em}
@@ -316,16 +323,16 @@ Overall motto is \emph{Be Ready} and ...
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 
-\item[Version your data:] even close to bare origin data might be
+\item[Version your data:] even data close to bare origin might be
   \emph{screwed} and require revisioning.  You could
   \begin{itemize}[nolistsep,leftmargin=1pc,style=nextline]
-  \item Use \href{http://git-annex.branchable.com}{Git-annex} for your
+  \item use \href{http://git-annex.branchable.com}{Git-annex} for your
     data
-  \item Consistently version older versions with the date in the
+  \item consistently version older versions with the date in the
     suffix, \eg how \href{http://www.1000genomes.org}{1000genomes}
     project does
-  \item If storing data in \href{http://aws.amazon.com/s3}{AWS S3},
-    turn on versioning for your bucket(s)
+  \item turn on versioning for your \href{http://aws.amazon.com/s3}{AWS S3}
+    bucket(s)
   \end{itemize}
 
 
@@ -337,9 +344,12 @@ Overall motto is \emph{Be Ready} and ...
 
 \ndsubsection{How could you help \emph{DataLad}?}
 
-We are picking up the development speed and hope to deliver an initial
-prototype within a year.  Meanwhile we would appreciate if you
+We have started the development (within both git-annex and DataLad) of
+necessary features and hope to deliver an initial functional prototype
+later this year.  Meanwhile we would appreciate if you
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[Contribute]
+\url{http://github.com/datalad/datalad/pulls}
 \item[Follow\&Share]
 % replace with icons for twitter/ g+
 \textit{Twitter:} \url{http://twitter.com/datalad}\\
@@ -351,8 +361,6 @@ prototype within a year.  Meanwhile we would appreciate if you
 \url{http://github.com/datalad/datalad/issues}\\
 We are interested in use-cases, interesting datasets, feedback on
 design decisions, alpha-users, \emph{etc.}
-\item[Contribute]
-\url{http://github.com/datalad/datalad/pulls}
 \end{description}
 
 
