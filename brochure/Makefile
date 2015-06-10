@@ -9,7 +9,7 @@ include LaTeX.mk
 .PHONY: pics
 pics:
 	@$(MAKE) -C ../datalad.org/src/content/pics/
-	@$(MAKE) -C ../datalad.org/src/content/pics/ datalad-logo2.pdf borrowed/git-annex-logo.pdf
+	@$(MAKE) -C ../datalad.org/src/content/pics/ datalad-logo2.pdf borrowed/git-annex-logo.pdf datalad-whiteboard.png
 
 datalad-whiteboard.%:
 	$(MAKE) -C ../pics $@
