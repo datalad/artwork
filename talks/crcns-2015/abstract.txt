@@ -1,0 +1,50 @@
+20-min talk
+
+# Title:
+  DataLad: progress toward data distribution
+  DataLad: establishing distributed but integrated data distribution
+  DataLad data distribution
+
+# Authors:
+
+Yaroslav O. Halchenko, Dartmouth College, etc
+Michael Hanke, Otto-von-Guericke University, Magdeburg, Germany, michael.hanke@gmail.com
+
+
+# Ideas:
+
+Theme could be
+
+A. "prepare the battleground to avoid migrations etc later".
+
+1. establishing efficient development process
+
+- github
+- travis + dockers+vms+buildbot (point to setup)
+- coverage/coveralls
+- migration to support Python3 (aiming for the future)
+
+2. "simulations" to identify scalability problems early
+
+- internal annex organization
+- batching interactions with annex
+- file-systems (ZoL let us down)
+
+B. Summary of available functionality/features and datasets
+
+- basic support (with a demo) for
+  - authentication
+  - content from archives
+  - ...
+
+- hopefully by then we prepare a few dataset handles in a distribution
+  (or just separately)
+
+- basic commands/workflow (install, upgrade, remove) and possibly
+  rudimentary publish (or at least push)
+
+
+# Abstract (250 words max):
+
+
+Contemporary neuroscience is heavily data-driven, but today's data management technologies and sharing practices fall at least a decade behind software ecosystem counterparts.  Distributed version control systems, such as Git, facilitate collaborative software development, and turnkey distributions, like NeuroDebian, free researchers from tedious and unreliable maintenance tasks. Based on git-annex (http://git-annex.branchable.com), which provides git-based framework for data logistics and versioning, DataLad project (http://datalad.org) is aiming to make a rich collection of disjoint neuroscience datasets available through a simple unified interface of a "data distribution".  In this talk we would like to present accomplished milestones, and current state of the project development.
