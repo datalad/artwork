@@ -1,3 +1,6 @@
 [submodule "datalad.org"]
 	path = datalad.org
 	url = git://github.com/datalad/datalad.org
+[submodule "talks/bernstein-2015/reveal.js"]
+	path = talks/bernstein-2015/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
