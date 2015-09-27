@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
-  <link rel="stylesheet" href="s.css" id="theme">
+  <link rel="stylesheet" href="styles/s.css" id="theme">
   <!-- Code syntax highlighting -->
   <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
   <!-- Printing and PDF exports -->
@@ -21,7 +21,7 @@
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
@@ -54,8 +54,17 @@
     </td>
   </tr>
   </table>
-  <aside class="notes">Something that we found necessary to have for our
-      own data sharing. Plug studyforrest.org</aside>
+  <aside class="notes">
+	This project was not born out of mere desire to be awarded NSF
+    grant.  We have been developing
+    (e.g. <a href="http://pymvpa.org">PyMVPA</a>) and distributing
+    (see <a href="http://neuro.debian.net">NeuroDebian</a>) software
+    for years and dealing with datasets always felt alien. It remains
+    plain <b>inconvenient</b> to share data from previous
+    (see <a href="http://data.pymvpa.org">data.pymvpa.org</a>) or new
+    studies
+    (see <a href="http://studyforrest.org">studyforrest.org</a>).
+  </aside>
 </section>
 
 
@@ -68,7 +77,9 @@
         <strong>because we hope to get something in return</strong>
     </li>
   </ul>
-    <aside class="notes">let's talk about motivation<aside>
+    <aside class="notes">There is a growing number of large funded
+	 data sharing initiatives, but why do <b>we</b> -- researchers --
+	 share data? There are multiple reasons<aside>
 </section>
 
 
@@ -76,7 +87,9 @@
   <h2>With whom do we share data?</h2>
   <img style="margin-top:-20px" data-src="pics/sharing_pie.svg">
   <small>fictional figure &mdash; reality is likely worse</small>
-  <aside class="notes">most of us share data, hardly anyone shares publicly<aside>
+  <aside class="notes">... and an interesting fact that many us do
+  share data -- with collaborators, those who simply asks -- but
+  hardly anyone shares publicly<aside>
 </section>
 
 
@@ -91,8 +104,9 @@
 
     <p>&hellip; and minimize the extra effort to do the <em>right thing</em><sup>&reg;</sup> and
     share</p>
-    <aside class="notes">increase likelihood of public sharing be making it
-        less special<aside>
+    <aside class="notes">or in summary, to increase likelihood of
+        public sharing be making it more convenient and thus less
+        special<aside>
 </section>
 
 
@@ -105,48 +119,66 @@
     <li class="fragment">facilitates public sharing, while <em>minimizing the cost of integrating 3rd-party contributions</em></li>
     <li class="fragment">requires <em>no central service</em>, or service provider</li>
   </ul>
-  <aside class="notes">learn from software development collaboration how to improve collaboration on data<aside>
+  <aside class="notes">So we have decided to learn from software
+  development collaboration workflows (anyone who hasn't heard about git and
+  github.com yet?) to improve collaboration on data<aside>
 </section>
 
 <section>
     <h2>How does it work?</h2>
-    <aside class="notes">how it works in 7 parts<aside>
+    <aside class="notes">How does DataLad work in 7 parts<aside>
 </section>
 
 <section data-transition="fade">
   <section data-transition="fade">
     <h2>Part I: Consume data</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds01.png">
-    <aside class="notes">first look at consumption, because we do that more often</aside>
+    <aside class="notes">First let's look at a typical data
+    consumption scenario, because
+    we do that more often. Besides consuming our own data, we often
+    install datasets and atlases as part of software installations, or
+    simply download some massive arrays from data sharing
+    portals</aside>
   </section>
 
   <section data-transition="fade">
     <h2>Install a dataset handle</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds02.png">
     <pre class="codefootnote"><code class="bash">$ datalad install-handle DEMOHANDLEURL ds1</code></pre>
-    <aside class="notes">at the bottom is an example command -- there is a Python API too, other bindings may come<aside>
+    <aside class="notes">Through out the presentation at the bottom
+    you will see an example command line.  DataLad has a Python
+    API too, and other bindings may come.<br/>  Here we would like to
+    install a "dataset handle"...<aside>
   </section>
   <section data-transition="fade">
     <h2>Install a dataset handle</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds03.png">
-    <aside class="notes">only a representation of the content, but no actual content</aside>
+    <aside class="notes">... where handle contains only a
+    representation of the content, but no actual content, which might
+    require terabytes of actual storage, but of which we don't need
+    everything for our analysis.</aside>
   </section>
 
+  <!--
   <section data-transition="fade">
     <h2>Obtain handle content</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds04.png">
     <aside class="notes">getting the content is a second step</aside>
-  </section>
+  </section>-->
   <section data-transition="fade">
     <h2>Obtain handle content</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds05.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad get file2</code></pre>
-    <aside class="notes">obtain individual files or groups thereof or all of them, but it is all about FILES!</aside>
+    <aside class="notes">getting the content is a second step -- you
+    can obtain individual files or groups thereof or all of them.  But
+    the main point "it is all about FILES!" which you can see on your
+    drive</aside>
   </section>
   <section data-transition="fade">
     <h2>Obtain handle content</h2>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds06.png">
-    <aside class="notes">Put into a hidden store (the annex)</aside>
+    <aside class="notes">Obtain the actual content and place it into
+    the data store (the annex)</aside>
   </section>
 
   <section>
@@ -171,26 +203,31 @@
       <li>proper attribution of contributions</li>
     </ul>
     </div>
-    <aside class="notes">all this is way more relevant and frequent in the peer2peer sharing case</aside>
+    <aside class="notes">Having means to get the data is not enough.
+    Versioning is important and is  more relevant and frequent in the
+    peer2peer sharing case, where data evolves through the
+    analysis and collaboration
+	</aside>
   </section>
   <section>
       <a href="http://www.phdcomics.com/comics/archive.php?comicid=1323">
         <img data-src="pics/phd052810s.gif">
       </a>
-    <aside class="notes">without version control there will be a mess</aside>
+    <aside class="notes">and without version control there will be a mess</aside>
   </section>
 
   <section data-transition="fade">
   <h2>Tracking data evolution</h2>
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds07.png">
-    <aside class="notes">now we have all things versioned</aside>
+    <aside class="notes">In DataLad/git-annex  we have all things
+    uniquely versioned ...</aside>
   </section>
   <section data-transition="fade">
     <h2>Tracking data evolution</h2>
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds08.png">
-    <aside class="notes">an update becomes available</aside>
+    <aside class="notes">... and when update becomes available ... </aside>
   </section>
 
   <section data-transition="fade">
@@ -198,7 +235,8 @@
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds09.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad update-handle</code></pre>
-    <aside class="notes">update information on versions</aside>
+    <aside class="notes">... we can update information about available
+    versions, ...</aside>
   </section>
 
   <section data-transition="fade">
@@ -206,40 +244,45 @@
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds10.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad upgrade-handle</code></pre>
-    <aside class="notes">update the representation, not necessarily the data at the same time</aside>
+    <aside class="notes">... and update the meta-data, not necessarily
+    the data at the same time ...</aside>
   </section>
   <section data-transition="fade">
     <h2>Obtain new content</h2>
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds11.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad get file2</code></pre>
-    <aside class="notes">get new content (individually). it get put along side any previous (version) content</aside>
+    <aside class="notes">but if desired -- get new content
+    (individually) which gets put along side any previous (version) content</aside>
   </section>
   <section data-transition="fade">
     <h2>Obtain new content</h2>
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds11.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad upgrade-handle --upgrade-data</code></pre>
-    <aside class="notes">but it can also be done all in one step</aside>
+    <aside class="notes">... or just upgrade everything previously
+    obtained in a single step</aside>
   </section>
   <section data-transition="fade">
     <h2>Multi-revision data</h2>
     <h5>&ldquo;I need the exact same data I used for this submission&rdquo;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds12.png">
-    <aside class="notes">use case</aside>
+    <aside class="notes">An example use case: happen you need
+    version/state of your data as you have used for the submission? </aside>
   </section>
   <section data-transition="fade">
     <h2>Multi-revision data</h2>
     <h5>&ldquo;I need the exact same data I used for this submission&rdquo;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds13.png">
     <pre class="codefootnote"><code class="bash">ds1/ $ datalad checkout v1</code></pre>
-    <aside class="notes">effortlessly go back in time</aside>
+    <aside class="notes">You can take advantage of the version control
+    of DataLad/git-annex/git and effortlessly go back in time...</aside>
   </section>
   <section data-transition="fade">
     <h2>Multi-revision data</h2>
     <h5>&nbsp;</h5>
     <img data-src="pics/cartoon_handle_consumption_tuned/dl_download_ds12.png">
-    <aside class="notes">and continue in the present when done</aside>
+    <aside class="notes">and continue back in the present when done.</aside>
   </section>
   <section>
     <h2>In brief</h2>
@@ -253,19 +296,23 @@
 <section>
   <section>
     <h2>Part 3: Multi-dataset management</h2>
-    <aside class="notes">there is a lot of data out there</aside>
+    <aside class="notes">Neuroscience fields produces tremendous
+    amount of data and there is a lot of public (and not so) data out
+    there.</aside>
   </section>
 
   <section data-transition="fade">
     <h2>Search for handles based on meta data</h2>
     <img data-src="pics/cartoon_handle_metadata_tuned/handle_metadata01.png">
-    <aside class="notes">how can i find the right dataset?</aside>
+    <aside class="notes">How can we find the right dataset as easily
+    as we look for software in software distributions?</aside>
   </section>
   <section data-transition="fade">
     <h2>Search for handles based on meta data</h2>
     <img data-src="pics/cartoon_handle_metadata_tuned/handle_metadata01.png">
     <pre class="codefootnote"><code class="bash">$ datalad search-handle "made with love"</code></pre>
-    <aside class="notes">supports meta data queries, hence not just about data files</aside>
+    <aside class="notes">"datalad search" supports meta data queries,
+    hence it is not just about data files, but also about associated meta-data</aside>
   </section>
   <section data-transition="fade">
     <h2>Search for handles based on meta data</h2>
@@ -276,21 +323,25 @@ DB/ds1
 DB/ds3
 # SPARQL
 </code></pre>
-    <aside class="notes">queries against a local cache. fast. supports SPARQL queries for link data/graphs.</aside>
+    <aside class="notes">E.g., "search-handle" queries local cache of
+    handles meta-data, it is fast and supports SPARQL queries for link
+	data/graphs.</aside>
   </section>
   <section data-transition="fade">
     <h2>Obtain a new handle</h2>
     <img data-src="pics/cartoon_handle_metadata_tuned/handle_metadata03.png">
     <pre class="codefootnote"><code class="bash">~ $ datalad install-handle DB/ds1 projectX/ds1
 </code></pre>
-    <aside class="notes">when I found a match, I can obtain it</aside>
+    <aside class="notes">And a dataset handle of interest could be
+    obtained (remember Part 1?)</aside>
   </section>
   <section data-transition="fade">
     <h2>Obtain a new handle</h2>
     <img data-src="pics/cartoon_handle_metadata_tuned/handle_metadata04.png">
     <pre class="codefootnote"><code class="bash">~ $ datalad install-handle DB/ds1 projectX/ds1
 </code></pre>
-    <aside class="notes">obtained handle gets tracked locally, for queries, just like outside data</aside>
+    <aside class="notes">Obtained handles get tracked locally, for
+    queries, just like for outside data known to DataLad</Aside>
   </section>
 
   <section data-transition="fade">
@@ -300,24 +351,27 @@ DB/ds3
 $ datalad whereis ds1
 /home/me/projectX/ds1
 </code></pre>
-    <aside class="notes">ask datalad where something is</aside>
+    <aside class="notes">DataLad tracks locations for installed handles.</aside>
   </section>
 
   <section data-transition="fade">
     <h2>Dataset collections</h2>
     <img data-src="pics/cartoon_handle_metadata_tuned/handle_metadata06.png">
-    <aside class="notes">important concept: collections</aside>
+    <aside class="notes">But installing multiple handles we pretty
+    much established a new "collection of handles".</aside>
   </section>
   <section data-transition="fade">
     <h2>Multiple data sources</h2>
     <img data-src="pics/cartoon_handle_collections_tuned/handle_collections01.png">
-    <aside class="notes">represent any kind of data source</aside>
+    <aside class="notes">A collection could represent any kind of data
+    source available for DataLad (e.g. a datasharing initiative
+    such as CRCNS.org or OpenfMRI)</aside>
   </section>
   <section data-transition="fade">
     <h2>Register</h2>
     <img data-src="pics/cartoon_handle_collections_tuned/handle_collections02.png">
     <pre class="codefootnote"><code class="bash">$ datalad register-collection URL</code></pre>
-    <aside class="notes">register creates a shallow representation of a data source, with it meta data</aside>
+    <aside class="notes">"register" creates a shallow representation of a data source, with it meta data</aside>
   </section>
   <section data-transition="fade">
     <h2>Register</h2>
@@ -326,7 +380,8 @@ $ datalad whereis ds1
 $ datalad register-collection URL
 $ datalad register-collection URL
     </code></pre>
-    <aside class="notes">any number of data sources can be registered</aside>
+    <aside class="notes">... and any number of data sources can be
+    registered to be accessible from your local DataLad installation...</aside>
   </section>
   <section data-transition="fade">
     <h2>Query</h2>
@@ -338,7 +393,8 @@ LAB/ds2
 BIG/ds2
 BIG/ds4
 </code></pre>
-    <aside class="notes">and queried, locally, for content...</aside>
+    <aside class="notes">and could be queried, locally (no network
+    access is necessary), for content...</aside>
   </section>
   <section data-transition="fade">
     <h2>Query</h2>
@@ -364,13 +420,14 @@ LAB
   <section data-transition="fade">
     <h2>Part 5: Collaboration</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration01.png">
-    <aside class="notes">collections play a key role on collaboration workflows. here is how it goes...</aside>
+    <aside class="notes">Collections play a key role on collaboration workflows. here is how it goes...</aside>
   </section>
   <section data-transition="fade">
     <h2>Create handle</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration02.png">
     <pre class="codefootnote"><code class="bash">~ $ datalad create-handle prjX/pilot</code></pre>
-    <aside class="notes">it starts by creating a dataset handle. get's tracked in a <strong>collection</strong> of local handles</aside>
+    <aside class="notes">It starts by creating a dataset handle, which
+    gets tracked in a <strong>collection</strong> of local handles</aside>
   </section>
   <section data-transition="fade">
     <h2>Specify basic meta data</h2>
@@ -380,25 +437,32 @@ LAB
     --author-email ex.ample@example.com \
     --description README.txt --license CC0 \
     ...</code></pre>
-    <aside class="notes">add meta data (handle level). it is made available in the collection too. More specialized meta data can be included too.</aside>
+    <aside class="notes">Meta-data (at handle level) could be added to
+    be available when you query the collection. More specialized meta data
+	can be included too.</aside>
   </section>
   <section data-transition="fade">
     <h2>Populate with data</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration03.png">
     <pre class="codefootnote"><code class="bash">~/prjX/pilot $ git annex add file1 file2 # proxy?</code></pre>
-    <aside class="notes">adding actual data files</aside>
+    <aside class="notes">Actual data files could be added to the
+    handle (e.g. via regular git / git-annex commands)</aside>
   </section>
   <section data-transition="fade">
     <h2>Publish</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration04.png">
     <pre class="codefootnote"><code class="bash">~/prjX/pilot $ datalad publish serverA</code></pre>
-    <aside class="notes">publish a collection with any number of datasets on a server (or locally). SSH or HTTP. only write permission for the publisher required. data pushed alongside.</aside>
+    <aside class="notes">And to share with collaborators or just
+    publicly, the collection can be published with any number of
+      datasets on a server (or locally) with access via SSH or HTTP.
+	  Write permission required only for the publisher. Data get pushed alongside.</aside>
   </section>
   <section data-transition="fade">
     <h2>Publish</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration05.png">
     <pre class="codefootnote"><code class="bash">~/prjX/pilot $ datalad publish serverA</code></pre>
-    <aside class="notes">new remote location is tracked as a collection too!</aside>
+    <aside class="notes">... and that new remote location gets tracked
+    as a collection too!</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -406,7 +470,9 @@ LAB
     <pre class="codefootnote"><code data-trim class="bash">
 $ datalad register-collection URL
     </code></pre>
-    <aside class="notes">anybody with access to that server can register this (remote) collection</aside>
+    <aside class="notes">(In case of public publishing) anyone with
+    access to that server can register this (remote) collection and
+    thus gain access to any published data...</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -415,7 +481,8 @@ $ datalad register-collection URL
 $ datalad register-collection URL
 $ datalad install-handle prjX/pilot
     </code></pre>
-    <aside class="notes">query it, discover a dataset handle, and install it</aside>
+    <aside class="notes">... query it, discover a dataset handle, and
+    install it ...</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -425,7 +492,8 @@ $ datalad register-collection URL
 $ datalad install-handle prjX/pilot projectX/pilot
 projectX/pilot/ $ datalad get file2
     </code></pre>
-    <aside class="notes">once installed, obtain (partial) content</aside>
+    <aside class="notes">... and once installed, obtain (partial if necessary)
+	  content</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -436,7 +504,7 @@ $ datalad install-handle prjX/pilot projectX/pilot
 projectX/pilot/ $ datalad get file2
 projectX/pilot/ $ # modified/add content
     </code></pre>
-    <aside class="notes">maybe modify it, or add something</aside>
+    <aside class="notes">... maybe modify it, or add something ...</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -448,7 +516,9 @@ $ datalad install-handle prjX/pilot projectX/pilot
 ~/projectX/pilot $ # modified/add content
 ~/projectX/pilot $ datalad publish serverB
     </code></pre>
-    <aside class="notes">and publish again, same as before, handle knows about both locations with data.<br/>server could be the same, but don't have to be.</aside>
+    <aside class="notes">... and publish again, same as before. Handle
+    knows about both locations with data.<br/>Server could be the
+    same, but don't have to be.</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -460,7 +530,10 @@ $ datalad install-handle prjX/pilot projectX/pilot
 ~/projectX/pilot $ # modified/add content
 ~/projectX/pilot $ datalad publish serverB
     </code></pre>
-    <aside class="notes">that remote collection gets tracked too. multiple flavors of the same thing -- location is part of the label</aside>
+    <aside class="notes">That remote collection gets tracked too thus
+    allowing for  multiple flavors of the same thing in the best
+    traditions of distributed version control. Location becomes part
+    of the dataset label</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
@@ -472,12 +545,15 @@ $ datalad install-handle prjX/pilot projectX/pilot
 ~/projectX/pilot $ # modified/add content
 ~/projectX/pilot $ datalad publish serverB
     </code></pre>
-    <aside class="notes">close circle, orginal sharer can integrate contribution -- or not -- up to them</aside>
+    <aside class="notes">To close the loop, original sharer can
+    integrate contribution (or not, or request changes, or ...)</aside>
   </section>
   <section data-transition="fade">
     <h2>Peer collaboration workflow</h2>
     <img data-src="pics/cartoon_collaboration_tuned/collaboration13.png">
-    <aside class="notes">don't even have to talk to each other, but can still exchange</aside>
+    <aside class="notes">They don't even have to talk to each other,
+    but can still exchange/collaborate/progress forward without
+    loosing control over their data versions</aside>
   </section>
   <section>
     <h2>In brief</h2>
@@ -486,53 +562,63 @@ $ datalad install-handle prjX/pilot projectX/pilot
     <p>supports multiple flavors of the &ldquo;same&rdquo; dataset</p>
     <aside class="notes"></aside>
   </section>
-</section>
+</section> 
 
 <section>
   <section data-transition="fade">
     <h2>Part 6: datalad.org</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg01.png">
-    <aside class="notes">decentralized is robust, but discovery in an issue</aside>
+    <aside class="notes">Decentralization allows for a very scalable
+    setup, but discovery of new resources might be an issue.</aside>
   </section>
   <section data-transition="fade">
     <h2>Middle-man</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg02.png">
-    <aside class="notes">datalad.org help discovery, and facilitates common tasks</aside>
+    <aside class="notes">datalad.org website aims to help discovery,
+    and facilitates common tasks</aside>
   </section>
   <section data-transition="fade">
     <h2>Handle auto-generation for public data</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg03.png">
-    <aside class="notes">for example make handles for data in public DBs</aside>
+    <aside class="notes">for example to make handles for data in
+    public DBs (CRCNS.org, openfmri.org, ...) ...</aside>
   </section>
   <section data-transition="fade">
     <h2>Authorized restricted meta data export</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg04.png">
-    <aside class="notes">even for restricted access, with explicit agreement to prevent leakage of sensitive information</aside>
+    <aside class="notes">... even for restricted access, with explicit
+    agreement to prevent leakage of sensitive information</aside>
   </section>
   <section data-transition="fade">
     <h2>Actual data provider does not change</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg05.png">
-    <aside class="notes">anybody can get handles from datalad.org -- but data from the original DB -- uniform interface</aside>
+    <aside class="notes">Anyone can get handles from datalad.org and
+    data from the original DB via uniform interface</aside>
   </section>
   <section data-transition="fade">
     <h2>Access control remains with provider</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg06.png">
-    <aside class="notes">same for restricted: individual approval to get actual data</aside>
+    <aside class="notes">With the same interface for restricted
+    access: individual approval will be requested to get actual
+    data</aside>
   </section>
   <section data-transition="fade">
     <h2>Accepts user-submitted handles</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg07.png">
-    <aside class="notes">anybody can notify datalad.org about a collection</aside>
+    <aside class="notes">We will be open to contributions so anyone
+    could notify datalad.org about a new collection</aside>
   </section>
   <section data-transition="fade">
     <h2>Data access remains under user control</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg08.png">
-    <aside class="notes">facilitate discovery -- again data stay with original provider</aside>
+    <aside class="notes">We will facilitate discovery -- while actual
+    data will stay with original provider ...</aside>
   </section>
   <section data-transition="fade">
     <h2>datalad.org: like datalad, just bigger</h2>
     <img data-src="pics/cartoon_dataladorg_tuned/dataladorg09.png">
-    <aside class="notes">continous DB monitoring</aside>
+    <aside class="notes">and datalad.org will provide continuous
+    monitoring and updates to collections</aside>
   </section>
   <section>
     <h2>In brief</h2>
@@ -547,12 +633,16 @@ $ datalad install-handle prjX/pilot projectX/pilot
   <section data-transition="fade">
     <h2>Part 7: Custom collections</h2>
     <img data-src="pics/cartoon_custom_collections_tuned/custom01.png">
-    <aside class="notes">intersting use case. datasets in DBs usually broad (by modality, by scientific field. same topic often across DBs</aside>
+    <aside class="notes">Since collections are just "pointers" to a
+    set of handles, we can address an interesting use case. Datasets
+    in DBs usually broad (by modality, by scientific field) and same
+    topic often is shared across DBs</aside>
   </section>
   <section data-transition="fade">
     <h2>Only meta data required</h2>
     <img data-src="pics/cartoon_custom_collections_tuned/custom02.png">
-    <aside class="notes">user can obtain all collections with content for some topic (found by query)...</aside>
+    <aside class="notes">Any user can obtain all collections with
+    content for some topic (found by a query)...</aside>
   </section>
   <section data-transition="fade">
     <h2>Publish anywhere, tell datalad.org</h2>
@@ -564,18 +654,22 @@ $ datalad install-handle prjX/pilot projectX/pilot
 $ datalad add-handle ds1 vs_collection
 $ datalad publish-collection vs_collection user@example.com:/DESTINATION
     </code></pre>
-    <aside class="notes">...and create a new collection just for this topic. publish anywhere.</aside>
+    <aside class="notes">...and create a new collection just for this
+    topic and then publish it anywhere.</aside>
   </section>
   <section data-transition="fade">
     <h2>Encourage derivative works</h2>
     <img data-src="pics/cartoon_custom_collections_tuned/custom04.png">
-    <aside class="notes"></aside>
+    <aside class="notes">In a sense this provides necessary
+    convenience for collating and sharing derivative works without
+    loosing connection to the origins: since original data still
+    resides at their original locations. </aside>
   </section>
   <section>
     <h2>In brief</h2>
     <p>improve meta data and share it</p>
     <p>ease discovery, document popularity</p>
-    <aside class="notes">now better offering for a people interested in topic</aside>
+    <aside class="notes"></aside>
   </section>
 </section>
 
