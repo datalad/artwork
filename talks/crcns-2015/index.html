@@ -5,7 +5,9 @@
 
   <title>Sharing data like source code -- a distributed approach to data management</title>
 
-  <meta name="description" content="ADDME">
+  <meta name="description" content="Brief presentation of the DataLad
+									(http://datalad.org)
+									fuctionality and API">
   <meta name="author" content="Michael Hanke and Yaroslav Halchenko">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,11 +34,137 @@
 
 <div class="reveal">
 
+
 <!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <h1>DataLad:</h1>
+  <h3>progress toward data distribution</h3>
+  <table>
+  <tr>
+	<td>Yaroslav Halchenko</td>
+	<td>Michael Hanke</td>
+  </tr>
+  <tr>
+    <td>
+        <small>Dept. Psychological and Brain Sciences <br />
+      Center for Cognitive Neuroscience, Dartmouth College
+      </small>
+    </td>
+    <td>
+      <small>Psychoinformatics lab, Institute of Psychology II,
+      University of Magdeburg</small><br>
+      <small>Center for Behavioral Brain Sciences, Magdeburg</small>
+    </td>
+  </tr>
+  </table>
+  <aside class="notes"></aside>
+</section>
+
+<section data-transition="fade">
+  <h2>What to expect?</h2>
+  <ul>
+	<li class="fragment">A brief summary of the project's 1st year activities and achievements</li>
+	<li class="fragment">Presentation of the perspective API and use-cases</li>
+  </ul>
+</section>
+
+<section data-transition="fade">
+  <h2>What have we done?</h2>
+</section>
+
+<section data-transition="fade"> <!-- data-background-iframe="http://github.com/datalad" -->
+  <h2>Established efficient collaborative development/release process</h2>
+  <h5>&nbsp;</h5>
+  <p>Built around <a href="http://github.com/datalad">github.com/datalad</a></p>
+    <ul class="fragment">
+	  <li> <a href="http://github.com/datalad/datalad">/datalad</a> -- main code-base </li>
+	  <li> <a href="http://github.com/datalad/artwork">/artwork</a> -- logos, tri-fold, talks etc. </li>
+	  <li> <a href="http://github.com/datalad/datalad.org">/datalad.org</a> -- website</li>
+	  <li> <a href="http://github.com/datalad/ansi">/ansi</a> -- ansible configuration for servers </li>
+	  <li> <a href="http://github.com/datalad/buildbot">/buildbot</a> -- CI (buildbot) configuration </li>
+    </ul>
+	<p class="fragment">i.e., our process is completely open and transparent</p>
+    <aside class="notes"></aside>
+ </section>
+
+<section data-transition="fade">
+  <h2>Extensive continuous integration</h2>
+  <ul>
+	<li> <a href="https://travis-ci.org/datalad/datalad/">Travis CI</a> (3 Python versions etc) + <a href="https://coveralls.io/github/duecredit/duecredit">Coverage/Coveralls.io</a></li>
+	<li class="fragment"> Buildbot with
+	  <ul><li>docker: 6 Debian/Ubuntu releases </li>
+		<li> VirtualBox: Windows; OS X</li>
+	  </ul>
+	</li>
+	<li class="fragment">Integrated with pull-requests on github</li>
+  </ul>
+  <img  class="fragment" data-src="pics2/datalad-PR-CI1.png">
+</section>
+
+<section data-transition="fade">
+  <h2>We already deliver</h2>
+  <ul>
+	<!--	<li>Code is Python3-ready</li>-->
+	<li class="fragment">Website is up (<a href="http://datalad.org">http://datalad.org</a>)</li>
+	<li class="fragment">4 snapshot releases (currently at 0.0.4)
+      <ul><li>Debian packages available from "-devel" of NeuroDebian</li></ul>
+	</li>
+	<li class="fragment">Most recent git-annex-standalone package is available
+      through-out NeuroDebian</li>
+  </ul>
+</section>
+
+<section data-transition="fade">
+  <h2>Early investigation of scalability</h2>
+  <ul>
+	<li class="fragment">Ability to scale to thousands of files (millions become a burden, WiP)</li>
+	<li class="fragment">Internal git-annex organization and support
+	  <ul>
+		<li>special external remotes</li>
+		<li>batching interactions with annex</li>
+		<li>dozens of bugs squashed</li>
+		</ul>
+	  <li class="fragment">File-systems (ZoL let us down, BTRFS won):<br>
+		see <a href="http://datalad.org/test_fs_analysis.html">http://datalad.org/test_fs_analysis.html</a></li></li>
+  </ul>
+</section>
+
+<section data-transition="fade">
+  <h2>"Released" initial functionality</h2>
+  <ul>
+	<li class="fragment">Initial uniform command line and Python API (see next set of
+	  slides), with manpages and all shebang (e.g. shell completions)</li>
+	<li class="fragment">Mode to automagicly fetch of data upon access:<br><em>python -m duecredit script.py</em></li>
+	<li class="fragment">Support of addressing content from archives</li>
+	<li class="fragment">Offspring child <a href="http://duecredit.org">DueCredit</a> to automate citing software and data</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Work-in-Progress</h2>
+  <ul>
+	<li>Crawling/updates refactoring</li>
+	<li>Further API work (still in flux)</li>
+	<li>Establishing initial collections (OpenfMRI and CRCNS.org) and
+	  starting datasets delivery</li>
+  </ul>
+</section>
+
+<section>
+<h1>Going to SfN 2015?</h1>
+<h2 class="fragment">Come to visit us at booth #2112</h2>
+</section>
+
+</div>
+
+<!--  Second portion  -->
+
 <div class="slides">
 <section>
   <h1>Sharing data like source code</h1>
   <h3>a distributed approach to data management</h3>
+  <h4>(presented at Bernstein conference, Sept 2015)</h4>
   <table>
   <tr>
   <td>Michael Hanke</td><td>Yaroslav Halchenko</td>
@@ -874,8 +1002,8 @@ mymanuscript.txt/
     transition: 'slide', // none/fade/slide/convex/concave/zoom
 
     // for automatic progression
-    // loop: true,
-    // autoSlide: 4000,
+    loop: true,
+    autoSlide: 4000,
 
     // Optional reveal.js plugins
     dependencies: [
