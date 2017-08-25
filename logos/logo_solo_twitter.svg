@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="211.06584mm"
+   height="211.06584mm"
+   viewBox="0 0 211.06584 211.06584"
+   version="1.1"
+   id="svg1884"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="logo_solo_twitter.svg"
+   inkscape:export-filename="/home/aqw/Downloads/datalad_twitter.png"
+   inkscape:export-xdpi="48.136635"
+   inkscape:export-ydpi="48.136635">
+  <defs
+     id="defs1878" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="122.51522"
+     inkscape:cy="185.77181"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1916"
+     inkscape:window-height="1071"
+     inkscape:window-x="0"
+     inkscape:window-y="498"
+     inkscape:window-maximized="0"
+     units="mm" />
+  <metadata
+     id="metadata1881">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-128.87075,46.380179)">
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:192px;line-height:25px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#333333;fill-opacity:1;stroke:none;stroke-width:1.22780454px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 237.56433,-21.509285 -17.835,16.9948955 18.14942,17.2945935 h 2.64575 c 8.85478,0 16.74413,1.99457 23.66693,5.983354 6.9229,3.835369 12.31533,9.280121 16.17918,16.3372 4.02494,7.056989 6.03839,15.187347 6.03839,24.392143 0,9.051381 -1.85152,17.105789 -5.55437,24.162779 -3.70294,7.057075 -8.85617,12.504149 -15.45698,16.339516 -2.36333,1.373164 -4.85472,2.489404 -7.46567,3.370934 1.82196,1.84641 16.33644,13.69893 16.33644,13.69893 l -11.60989,20.72633 c 8.96161,-1.6676 17.28139,-4.36925 24.95669,-8.1112 14.00661,-6.75025 24.79401,-16.26018 32.3608,-28.53327 7.72789,-12.273089 11.59277,-26.311296 11.59277,-42.112837 0,-15.801541 -3.78518,-29.761392 -11.35197,-41.881068 -7.5668,-12.2730911 -18.19226,-21.7854294 -31.87697,-28.535589 -13.52361,-6.75016 -29.14029,-10.126711 -46.84993,-10.126711 z"
+       id="path1711-6-2-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsccssscccccsccsc"
+       inkscape:export-xdpi="299.96201"
+       inkscape:export-ydpi="299.96201" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:192px;line-height:25px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa200;fill-opacity:1;stroke:none;stroke-width:1.22780454px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 168.55828,-21.509285 V 139.80691 c 0,0 62.90039,0.0178 68.06514,0 5.16474,-0.0178 7.35331,-0.89892 7.35331,-0.89892 L 255.81974,121.26217 236.8672,105.7491 H 212.75255 V 12.780204 l -8.41631,-8.0222269 -9.73058,-9.2723666 -0.006,-0.00229 c 0.002,0.00115 8.95833,-8.5345315 17.83499,-16.9926675 z"
+       id="path1711-6-2-1-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczcccccccccc"
+       inkscape:export-xdpi="299.96201"
+       inkscape:export-ydpi="299.96201" />
+  </g>
+</svg>
