@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="732.07505"
-     inkscape:cy="622.3493"
+     inkscape:zoom="1.4"
+     inkscape:cx="445.12668"
+     inkscape:cy="411.13332"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -59,26 +59,26 @@
     <image
        sodipodi:absref="/home/yoh/proj/datalad/artwork/banners/doyou/03521u_down1_bg.png"
        xlink:href="03521u_down1_bg.png"
-       width="209.97333"
-       height="282.02469"
-       preserveAspectRatio="none"
-       id="image959"
+       y="-67.396271"
        x="53.763336"
-       y="-67.396271" />
+       id="image959"
+       preserveAspectRatio="none"
+       height="282.02469"
+       width="209.97333" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.63692093px;line-height:125%;font-family:Arimo;-inkscape-font-specification:'Arimo, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#d04144;fill-opacity:1;stroke:#d04144;stroke-width:0.67082977;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="211.71205"
-       y="103.41185"
+       x="212.3392"
+       y="104.99513"
        id="text817"
        transform="scale(0.74801019,1.3368802)"><tspan
          sodipodi:role="line"
-         x="211.71205"
-         y="103.41185"
+         x="212.3392"
+         y="104.99513"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.63692093px;line-height:89.99999762%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#d04144;fill-opacity:1;stroke:#130505;stroke-width:0.67082977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="tspan835">DO<tspan
+         id="tspan835">I WANT <tspan
    id="tspan992"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.86456871px;line-height:89.99999762%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#130505;fill-opacity:1;stroke:#d04144;stroke-width:0.67082977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">YOU</tspan>CONTROL</tspan></text>
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.86456871px;line-height:89.99999762%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#130505;fill-opacity:1;stroke:#d04144;stroke-width:0.67082977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">YOU</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.62579155px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:0.26433092px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -95,14 +95,14 @@
        transform="scale(0.74801019,1.3368802)"
        id="text985"
        y="125.80293"
-       x="212.61008"
+       x="211.96033"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.63692093px;line-height:125%;font-family:Arimo;-inkscape-font-specification:'Arimo, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#d04144;fill-opacity:1;stroke:#d04144;stroke-width:0.67082977;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan983"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.63692093px;line-height:89.99999762%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#d04144;fill-opacity:1;stroke:#130505;stroke-width:0.67082977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="125.80293"
-         x="212.61008"
-         sodipodi:role="line">YOUR DATA?</tspan></text>
+         x="211.96033"
+         sodipodi:role="line">TO CONTROL DATA</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
