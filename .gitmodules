@@ -1,3 +1,6 @@
 [submodule "talks/bernstein-2015/reveal.js"]
 	path = talks/bernstein-2015/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "onlinebrainintensive-2017"]
+	path = onlinebrainintensive-2017
+	url = ./onlinebrainintensive-2017
