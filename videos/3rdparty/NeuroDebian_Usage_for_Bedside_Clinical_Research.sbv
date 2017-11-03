@@ -1,0 +1,455 @@
+0:00:01.099,0:00:04.269
+Hello in this second video. I'm going to use the virtual machine
+
+0:00:04.270,0:00:10.629
+We created to look at a single subjects data the clinical scenario is a child who has been having left funnel onset seizures
+
+0:00:10.789,0:00:14.319
+Who's had normal Mris, but a pet scan showing left hypometabolism?
+
+0:00:15.139,0:00:21.009
+Here we're going to look for signs of subtle cortical thickness that might overlap with the pet data. Let's get started
+
+0:00:23.310,0:00:26.719
+First we'll need to get our patients Dicom files from Radiology
+
+0:00:27.270,0:00:30.739
+The Ginkgo Cad x software that you installed on the first video?
+
+0:00:30.990,0:00:35.239
+Will allow you to retrieve the files directly from a Dicom note if you have the address and port number
+
+0:00:36.030,0:00:38.900
+However the settings you will need will vary from institution to institution
+
+0:00:39.600,0:00:41.900
+These can be set by going to tools
+
+0:00:44.160,0:00:51.229
+Settings and clicking on Dicom nodes on the left create a new entry and entering the relevant information
+
+0:00:52.860,0:00:53.910
+for now
+
+0:00:53.910,0:00:59.570
+let's assume that you have the dicom images from the subjects MrI and pet studies on a CD or thumb drive on
+
+0:00:59.640,0:01:03.559
+Your host computer copy the files into the shared folder we created earlier
+
+0:01:06.720,0:01:12.919
+then open a terminal [window] and navigate to the shared Folder by entering CD space [host]
+
+0:01:14.100,0:01:17.960
+We can list the files to see verify that the data is here
+
+0:01:21.360,0:01:23.360
+And move back to our home directory
+
+0:01:29.480,0:01:35.259
+Let's convert the die comes into nifty Format. Which is the most commonly used imaging file Format outside of Clinical Radiology
+
+0:01:35.990,0:01:39.100
+By using the command DcM to an aye-aye
+
+0:01:47.120,0:01:53.770
+You'll notice that the the dicom two nifty command created reoriented and cropped versions of the nifty file as well
+
+0:01:56.480,0:02:03.850
+Labeled with the same file name with an o in the front for oriented and ceo for cropped and oriented
+
+0:02:05.030,0:02:08.470
+Let's also convert our pet data from Dicom to nifty as well
+
+0:02:11.060,0:02:14.920
+Next we'll take a look at these files with the slices program from FSL
+
+0:02:15.470,0:02:19.959
+slices only works on nifty files, but gives you a quick snapshot of what the volume looks like
+
+0:02:21.560,0:02:29.190
+Here we'll look at the difference between the original T1 as it was stored by the scanner and the reoriented T1 and conventional neuroimaging orientation
+
+0:02:43.710,0:02:49.739
+As you can see the data has simply been rotated by 90 degree increments, and this does not degrade the data quality
+
+0:02:51.670,0:02:56.729
+We can also examine the cropped version which as you would expect has had the empty space removed
+
+0:02:58.120,0:03:01.379
+Please be aware that some MrI vendors turn on JpEG compression
+
+0:03:01.720,0:03:05.100
+inside of their die comms if your images look like this image on the left
+
+0:03:05.290,0:03:09.150
+The navigate to the main directory for your Dicom images and run the command
+
+0:03:09.520,0:03:16.230
+Dicom decompress all one word all lower case then return to the step above and rerun DCM to Nii
+
+0:03:17.980,0:03:21.899
+let's copy the standard oriented file to our home directory and
+
+0:03:23.530,0:03:25.530
+Then take a look at our pet data
+
+0:03:27.460,0:03:33.120
+we can navigate to the pet folder list all the files just ending in Gz and
+
+0:03:33.910,0:03:36.180
+Do these files with slices as well [I]?
+
+0:03:36.940,0:03:39.210
+Know in advance that this file is the one we want
+
+0:03:39.880,0:03:41.770
+and
+
+0:03:41.770,0:03:44.850
+There you see the pet data looks like a fuzzy image of the brain
+
+0:03:47.530,0:03:49.890
+Will copy this file to our home directory as well
+
+0:03:52.120,0:03:58.649
+Before [we] run free surfers reconstruction script using the subjects T1 file. Let's rename things to be a bit easier to read
+
+0:03:58.900,0:04:05.040
+We'll rename the T1 file t 1 dot nifty Jeezy and the pet Data FDGFdg
+
+0:04:06.040,0:04:08.040
+z
+
+0:04:09.640,0:04:13.140
+Run the command sub der su. Be dir
+
+0:04:13.630,0:04:18.600
+Which is an alias for the command to let freesurfer know we're going to be making subject files in the current directory
+
+0:04:20.230,0:04:26.520
+Then and then we'll run recon all which is free surfers primary surface reconstruction and volumetric segmentation script
+
+0:04:27.010,0:04:32.189
+This will take about 7 to 12 hours depending on your computer make sure you are not logged off during that time
+
+0:04:32.320,0:04:34.320
+We will continue when that is done
+
+0:04:34.960,0:04:37.829
+Now they're free surfers done analyzing the subjects t1
+
+0:04:37.830,0:04:44.549
+We can view the results either within the freesurfer provided tools like free view or use the human connection projects workbench Viewer I?
+
+0:04:44.680,0:04:49.920
+Prefer [the] latter as I find it easier to load and view [all] of the subjects files at once and can be run on windows
+
+0:04:49.920,0:04:53.309
+Machines easily allowing more portability to do this
+
+0:04:53.310,0:05:01.019
+I've written a basic script you see here called freesurfer 2h p workbench converter at the command Line type in this command
+
+0:05:01.389,0:05:03.418
+followed by the name of our subject
+
+0:05:04.330,0:05:06.330
+This will take about 30 minutes or so
+
+0:05:09.999,0:05:13.469
+We will also want to look at our patients FDG pet scan as well
+
+0:05:13.629,0:05:20.998
+So we should register this with the T1 Mp rage for this we'll use a software package called ants which stands for Advanced normalization tools?
+
+0:05:21.429,0:05:27.089
+Since the pet Data is effectively just a fuzzy image of the brain you may need to register it to an image of a brain
+
+0:05:27.189,0:05:33.299
+Extracted from our T1 instead of the original image with skull and necks intact this is often the [case] with FMRI results as [well]
+
+0:05:33.669,0:05:36.838
+The brain extracted image can be found in the subjects one
+
+0:05:37.899,0:05:44.339
+Mri subdirectory, and is called Brand Mg. Z which is free surfers mgH harvard formatted file
+
+0:05:45.039,0:05:48.838
+We can convert this to nifty by using the Command MrI underscore convert
+
+0:05:49.089,0:05:50.669
+if the name of the original file
+
+0:05:50.669,0:05:55.348
+And then the name of the file with the new extension that we want this program knows
+
+0:05:55.509,0:05:58.859
+to convert this from MgH s formats and if [t] format
+
+0:06:00.189,0:06:03.239
+We can then make sure that this is oriented in the correct orientation
+
+0:06:04.059,0:06:06.958
+using [fo] [cells] reorient to standard command
+
+0:06:08.080,0:06:10.080
+Will send the output to our home directory
+
+0:06:12.639,0:06:15.948
+And we can verify that this is correct by using slices
+
+0:06:23.530,0:06:30.030
+We can also compare this to our fDG pet scan from before to see that in fact both do look pretty similar
+
+0:06:30.030,0:06:32.030
+But still need to be registered together I
+
+0:06:33.490,0:06:39.960
+Made an alias for the ants registration command called ants quick as you can see here to make things easier
+
+0:06:39.960,0:06:47.039
+So to register the FDG image to the brain image we can enter ants quick, Dash [d] 3 for 3 dimensions
+
+0:06:47.590,0:06:49.980
+Dashti a for a fine transformation
+
+0:06:50.650,0:06:53.730
+dash f for fixed and give the brain image
+
+0:06:54.340,0:07:01.470
+Dash m for movable and give the f dG image, and then what's helped to label the output as fDG to brain you
+
+0:07:04.600,0:07:12.240
+can see here as this starts how these different input variables get coded into options for the registration computation
+
+0:07:12.730,0:07:15.629
+This will take a few minutes, so we'll continue when this is done. We
+
+0:07:22.210,0:07:26.309
+Can verify that the registration worked by using slices on both files together?
+
+0:07:26.650,0:07:32.489
+You'll notice that the output from the ants registration is FTD to brain warped Nifty Gz
+
+0:07:33.250,0:07:38.250
+Specifying two images for the slices command tells it to use the second image as a red edged
+
+0:07:38.830,0:07:44.429
+Overlay as you can see here and you can see that the two files actually line up quite well now
+
+0:07:46.420,0:07:47.560
+We can then add
+
+0:07:47.560,0:07:50.280
+This to our work bench data set by using another script
+
+0:07:50.280,0:07:55.589
+I've put together at the command enter import volume to spec and then give the subject name
+
+0:07:56.410,0:07:58.410
+the volume name
+
+0:08:01.810,0:08:06.310
+a short label tool for the file in this case FDG and
+
+0:08:07.280,0:08:14.530
+Then which layers you want to intersect the data with either the peel surface the mid thickness surface for the white matter service
+
+0:08:14.530,0:08:16.280
+or all three
+
+0:08:16.280,0:08:22.089
+I'll cancel this to show you the usage of the command as you can see here with an example
+
+0:08:28.160,0:08:35.349
+We'll go ahead and select the command and run it now this takes a few minutes
+
+0:08:40.130,0:08:43.119
+now from within our subjects HCP subdirectory
+
+0:08:44.300,0:08:50.169
+We can start the workbench viewer software by typing WB Underscore view at the command Line choose the
+
+0:08:50.630,0:08:53.229
+164 K spec file by double-clicking on it and
+
+0:08:54.200,0:08:58.539
+Then click load to load all of the files within the spec or specification file
+
+0:08:58.760,0:09:04.119
+There are several tutorials online that can walk you through all the features of the software so in the interest of time
+
+0:09:04.120,0:09:08.890
+I'll simply show you some of the features pertinent to our present clinical set clinical situation
+
+0:09:09.410,0:09:16.810
+Once the data loads you will see the left and right cortical make thickness surfaces labeled with the desiccant [colony] atlas regions for the subject
+
+0:09:17.210,0:09:22.960
+You can click on the volume tab [tolu] the so view the loaded nifty files and scroll through in different planes
+
+0:09:27.290,0:09:28.580
+or
+
+0:09:28.580,0:09:33.879
+The all tab to load both the service renderings and volume slices at the same time here
+
+0:09:33.880,0:09:37.809
+You can rotate and slide the volume slices to examine particular regions in detail
+
+0:09:38.390,0:09:40.659
+let's return to the Montage pain and
+
+0:09:42.260,0:09:48.369
+Here you can see the mid thickness surface is currently loaded you can turn off various views with these checkboxes here
+
+0:09:49.940,0:09:51.830
+and
+
+0:09:51.830,0:09:57.069
+Also change the displayed services from the default mid thickness Gray to the peel surface
+
+0:10:00.080,0:10:06.429
+as you can see on the left an inflated surface that lets you more easily see data in the [Sulci] a
+
+0:10:07.610,0:10:12.760
+Very inflated surface, which is even more so or even the underlying spherical representation
+
+0:10:13.400,0:10:15.479
+the white Matter services also available
+
+0:10:16.160,0:10:17.810
+we'll reset this to the
+
+0:10:17.810,0:10:25.030
+[grey] mid thickness layer you can also change the overlay for the from the segmentation its other calculated measures such as thickness
+
+0:10:25.430,0:10:30.610
+Which you can see here in Rainbow color scale we can adjust the color scale and range by clicking on the wrench icon
+
+0:10:31.550,0:10:38.830
+Here you can see the average cortical thickness is around 3 millimeters and we can adjust the range to better Demonstrate Clinical extremes
+
+0:10:46.160,0:10:53.889
+Interestingly you can also view the two hemispheres as unfolded flat sheets which allows you to view the entire circle Cortex as [ones]
+
+0:10:54.710,0:10:57.759
+Will change the overlay to the calculated thickness and look for abnormalities?
+
+0:10:58.070,0:11:03.760
+Noting that there's a normal pattern that you will recognize after looking at a few subjects this area here
+
+0:11:04.760,0:11:10.569
+Seems to indicate a focal thickening of the left medial frontal Cortex that might correlate with the suspected seizure onset Zone
+
+0:11:11.030,0:11:13.660
+if we return to the 3D Surface views
+
+0:11:14.720,0:11:19.059
+We can switch to the medial view and see more clearly where this area is
+
+0:11:20.420,0:11:25.839
+You can see that there does seem to be sending asymmetry here comparing the left and right cingulate cortices
+
+0:11:27.230,0:11:33.879
+In addition to visual inspection you can also click on the 3D models to gain information about that location if we click on our
+
+0:11:33.980,0:11:37.929
+Suspected lesion you can see that the calculated thickness is 4.6. Four millimeters
+
+0:11:39.440,0:11:43.300
+You can also choose to view this data overlaid on the original T1 image
+
+0:11:44.030,0:11:48.009
+You can see here that the location we clicked on is also identified by crosshairs
+
+0:11:49.040,0:11:54.609
+Will move the overlay toolbox from the bottom over to the left by clicking on view
+
+0:11:57.680,0:11:59.680
+and
+
+0:11:59.690,0:12:01.690
+then add in this patient's
+
+0:12:01.970,0:12:06.850
+FdG-pet skin as well by clicking on the Checkbox next to it. We adjust the color scale
+
+0:12:06.950,0:12:12.189
+We can more easily see if the area of hypometabolism indeed alliance with the area of increased cortical thickness
+
+0:12:12.190,0:12:12.830
+I
+
+0:12:12.830,0:12:18.160
+typically choose values that exclude the extremes and gives dynamic range to the upper half of the pet data
+
+0:12:18.230,0:12:20.380
+to look for areas of cortical hypometabolism
+
+0:12:21.500,0:12:22.550
+in
+
+0:12:22.550,0:12:25.750
+Addition to the pet results we can bring up the surface based data
+
+0:12:25.750,0:12:27.350
+We were just looking at as well
+
+0:12:27.350,0:12:33.759
+Choose the left and right mid thickness surfaces and pick tab one to use the color scale we set up in that tab
+
+0:12:34.820,0:12:38.980
+You can also increase the visual thickness of the lines to more easily see the colors
+
+0:12:46.250,0:12:49.420
+Now you can see [that] this area of cortical thickness
+
+0:12:50.180,0:12:52.180
+Actually is aligned with the area of hypometabolism
+
+0:12:52.820,0:12:57.280
+We can also turn on the peel and white surfaces instead to give you a visual
+
+0:12:57.380,0:13:01.150
+Impression of the cortical thickness as well as allow you to see the underlying pet Data
+
+0:13:03.320,0:13:05.320
+We can also make the pet data
+
+0:13:06.110,0:13:10.419
+Transparent to allow the T1 Data to show through by either turning it on or off or
+
+0:13:11.300,0:13:13.359
+Adjusting the transparency setting here
+
+0:13:19.990,0:13:22.419
+As you can see there does seem to be some asymmetry
+
+0:13:24.140,0:13:25.880
+finally we can also
+
+0:13:25.880,0:13:32.709
+inspect the values from the pet volume where it intersects with the cortical surfaces to do this return to the montage view and choose the
+
+0:13:32.709,0:13:36.639
+left and right FDG layers from the overlay toolbox
+
+0:13:38.660,0:13:43.870
+Choose the ft. G on mid thickness intersection to look at cortical metabolism
+
+0:13:46.279,0:13:49.958
+Again, you can see the asymmetry between the left and right cingulate cortices
+
+0:13:51.470,0:13:53.670
+This concludes our practical demonstration
+
+0:13:57.750,0:14:00.739
+Illustrates the possibilities available with Modern or imaging tools
+
+0:14:00.959,0:14:05.839
+our goal is to encourage clinical trainees to become more interested in neuroimaging and help bridge the
+
+0:14:06.029,0:14:10.609
+Translational Gap between the neuroscience laboratory and the neurologists workroom. Thank you for watching
