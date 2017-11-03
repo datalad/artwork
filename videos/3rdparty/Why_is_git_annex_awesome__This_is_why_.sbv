@@ -1,0 +1,212 @@
+0:00:00.370,0:00:04.380
+This is why git-annex is awesome.
+
+0:00:04.380,0:00:07.379
+This is just for some ways to show them just why it's so awesome
+
+0:00:07.379,0:00:09.379
+And why I use it
+
+0:00:10.000,0:00:13.980
+So git-annex separates  the content of your harddrive
+
+0:00:13.980,0:00:17.020
+from the index of the same
+
+0:00:17.020,0:00:19.338
+The way I use it, and there's a number of ways
+
+0:00:19.338,0:00:20.850
+in which you can use git annex
+
+0:00:22.990,0:00:27.150
+is that I have it set up
+
+0:00:27.150,0:00:27.760
+for essentially most of the files I have in my home directory
+
+0:00:27.760,0:00:30.059
+You can see - I have this file
+
+0:00:30.820,0:00:35.459
+Bookforare which is normal text file
+
+0:00:35.459,0:00:36.370
+so I can just get it up here, and it's here
+
+0:00:36.370,0:00:38.740
+Now I can ask git-annex
+
+0:00:39.520,0:00:40.160
+where this file is
+
+0:00:40.170,0:00:44.141
+and you will see that it actually exists in three copies.
+
+0:00:44.141,0:00:46.440
+I have one copy here on my laptop
+
+0:00:46.829,0:00:49.049
+I have two separate copies
+
+0:00:49.090,0:00:52.206
+Which are distributed to essentially backup storage
+
+0:00:52.206,0:00:55.199
+that I have it's on a virtual machine in Montreal
+
+0:00:55.629,0:00:57.339
+and this station and NAS
+
+0:00:57.339,0:00:59.226
+which I have it in my home
+
+0:00:59.226,0:01:01.259
+both of those were encrypted
+
+0:01:01.660,0:01:04.086
+either with  rsync plus GPG
+
+0:01:04.086,0:01:07.589
+or with a gcrypt or to say git plus GPG
+
+0:01:09.100,0:01:10.270
+now
+
+0:01:10.270,0:01:11.440
+What I
+
+0:01:11.440,0:01:12.900
+Love about git-annex
+
+0:01:12.930,0:01:14.740
+is that I can
+
+0:01:14.740,0:01:16.362
+drop this file from my laptop
+
+0:01:16.362,0:01:18.640
+if I feel that I don't have a need for it anymore
+
+0:01:18.640,0:01:20.220
+or if it's taking room
+
+0:01:20.220,0:01:22.360
+or for whatever reason
+
+0:01:22.360,0:01:25.600
+I don't need it actively on my laptop
+
+0:01:25.840,0:01:31.320
+But since git annex separates the content from the index
+
+0:01:31.320,0:01:32.969
+the file is still there...
+
+0:01:32.969,0:01:35.760
+well the file is not there, but I can see it
+
+0:01:37.060,0:01:39.856
+It's sort of unresolved
+
+0:01:39.860,0:01:42.660
+because if I try to do that,
+
+0:01:42.660,0:01:45.120
+the file is not there, I can't get to it
+
+0:01:45.120,0:01:48.780
+but if I check where it is
+
+0:01:48.780,0:01:52.260
+it will say okay is no longer in my laptop
+
+0:01:52.420,0:01:55.200
+but it exists in two different copies
+
+0:01:55.200,0:01:57.540
+in those virtual machines, and on the NAS
+
+0:01:57.540,0:02:00.860
+and then if I ever need it in any way,
+
+0:02:01.320,0:02:03.800
+hopefully before I go offline
+
+0:02:03.980,0:02:05.240
+then I just get that file
+
+0:02:05.240,0:02:07.840
+and it takes it from whichever storage
+
+0:02:07.840,0:02:08.520
+is the most convenient
+
+0:02:09.009,0:02:10.937
+And you can have any number of storages
+
+0:02:10.937,0:02:12.568
+you can mix and match as you want
+
+0:02:13.069,0:02:15.348
+you can have an SD card, on USB drives
+
+0:02:15.780,0:02:17.180
+you know -- you name it
+
+0:02:17.340,0:02:19.240
+and use them to set up
+
+0:02:19.240,0:02:20.720
+what kind of content you want where
+
+0:02:20.720,0:02:23.840
+and what priorities should be
+
+0:02:23.840,0:02:26.040
+for bringing things in order
+
+0:02:26.040,0:02:27.660
+and yeah there we had a file
+
+0:02:27.660,0:02:28.920
+that's git-annex
+
+0:02:28.920,0:02:31.332
+that's how I use it and that's why I love it
+
+0:02:31.332,0:02:32.749
+because I usually have a lot of
+
+0:02:33.120,0:02:34.640
+rather big files
+
+0:02:34.640,0:02:37.700
+that I shuffle around for videos and audio and whatever
+
+0:02:39.090,0:02:43.187
+And I don't have space for terabytes of data on my laptop,
+
+0:02:43.187,0:02:46.789
+but I still want to see the index of what I have so
+
+0:02:47.430,0:02:49.010
+with git-annex it is possible
+
+0:02:49.010,0:02:50.992
+to have an instant view
+
+0:02:50.992,0:02:54.100
+of all the files that I ever have
+
+0:02:54.100,0:02:55.730
+and I have everywhere.
+
+0:02:56.579,0:02:59.054
+But the files that I work with actively
+
+0:02:59.054,0:03:02.418
+are the ones that I actually have immediate access to.
+
+0:03:02.639,0:03:05.029
+The other ones I can retrieve when I need them
