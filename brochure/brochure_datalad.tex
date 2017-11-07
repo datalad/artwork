@@ -16,7 +16,7 @@
 \usepackage{wrapfig}
 %\setlength{\columnseprule}{1pt} % for visible divider
 \setlength{\columnsep}{1cm}
-
+\newcommand{\PR}[1]{\href{https://github.com/datalad/datalad/pull/#1}{PR\##1}}
 \newcommand{\phttp}[1]{\href{http://#1}{#1}}
 \newcommand{\ie}[0]{\emph{i.e.},\ }
 \newcommand{\eg}[0]{\emph{e.g.},\ }
@@ -87,7 +87,7 @@
 
 \begin{center}
 \noindent
-\includegraphics[width=0.5\columnwidth]{borrowed/git-annex-logo}
+\includegraphics[width=0.5\columnwidth]{git-annex-logo}
 
 \url{http://git-annex.branchable.com}
 
@@ -158,8 +158,8 @@ Fetch file back to the local repository
 
 \ndsubsection{Neuroimaging datasets to play with}
 
-We have made some datasets already available as git-annex
-repositories, so \texttt{git clone ...}
+Any dataset on \texttt{http://datasets.datalad.org} and some others
+you can \texttt{git clone ...}
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[\texttt{http://psydata.ovgu.de/forrest\_gump/.git/}] Unique 7T MRI,
@@ -175,9 +175,10 @@ repositories, so \texttt{git clone ...}
 
 \ndsubsection{How to install git-annex}
 
-\texttt{apt-get install git-annex}
+\hspace{2em}\texttt{apt-get install git-annex-standalone}
 
-See \url{https://git-annex.branchable.com/install} for more (OS X,
+\noindent from NeuroDebian, and see
+\url{https://git-annex.branchable.com/install} for more (OS X,
 Windows, Linux, Android)
 
 \ndsubsection{How to get support}
@@ -196,25 +197,25 @@ Windows, Linux, Android)
 
 %\section*{DataLad}
 \begin{center}
-\includegraphics[width=0.5\columnwidth,trim=0 27 0 0,clip]{datalad-logo2}\\
+\includegraphics[width=0.5\columnwidth,trim=0 27 0 0,clip]{logo_solo}\\
 \url{http://datalad.org}
 \end{center}
 
 \ndsection{DataLad}
 
-aims to simplify and thus facilitate delivery and sharing of
-scientific data by establishing a federated data distribution.
-While initially aiming to deliver public neuroimaging datasets,
-DataLad will be easy to adopt more neuroscience data or other fields
-of endeavor.
+aims to simplify and thus facilitate discovery, delivery, management,
+and sharing of scientific data by establishing a federated data
+distribution.  While initially aiming to deliver public neuroimaging
+datasets, DataLad itself is domain agnostic and could be used for any
+other field of endeavor.
 
 \ndsubsection{DataLad FAQ}
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[Federated?] It is impractical to distribute data through
   \emph{classical} distribution mechanisms, where
   content is contained within packages available from the central
-  location (or its mirrors).  DataLad will only collect, unify,
-  monitor, and expose through convenient interfaces data available
+  location (or its mirrors).  DataLad collects, unifies,
+  monitors, and exposes through convenient interfaces data available
   across a wide range of data providers
 % -- data sharing initiatives,  curated collections, etc.
 
@@ -231,15 +232,20 @@ of endeavor.
 \def\blank{\hspace{0em}\vspace{-1em}}
 %\columnbreak
 
-\ndsubsection{Planned dataset coverage}
+\ndsubsection{Current coverage}
+
+Overall we already provide unified access to over 10TB of neural data
+(see \phttp{datasets.datalad.org}).
+
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[\phttp{OpenfMRI.org}] curated fMRI (and EEG) datasets
-\item[\phttp{HumanConnectome.org}] anatomical, functional,
-  diffusion MRI data from 1,200 subjects
 \item[\phttp{CRCNS.org}] curated electrophysiological and neuroimaging
   datasets
-\item[\href{http://fcon\_1000.projects.nitrc.org}{INDI}] a collation of various datasets and initiatives (functional
-  connectome, \etc)
+\item[\href{http://fcon\_1000.projects.nitrc.org}{INDI}] a collation
+  of various datasets and initiatives (functional connectome, \etc):
+  \href{http://datasets.datalad.org/?dir=/adhd200}{ADHD200},
+  \href{http://datasets.datalad.org/?dir=/hbnssi}{HBNSSI},
+  \href{http://datasets.datalad.org/?dir=/corr}{CoRR}, etc
 \end{description}
 
 \end{multicols}
@@ -250,7 +256,7 @@ of endeavor.
   \node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(7mm,5mm)$) {
      %\includegraphics{imgfile}
      %\includegraphics[width=0.4\linewidth]{datalad-openfmri-demo_sw.png}
-     \includegraphics[width=0.65\linewidth]{datalad-whiteboard.png}
+     \includegraphics[width=0.65\linewidth]{datalad-whiteboard.pdf}
   };
 \end{tikzpicture}
 \vspace{-2.5em}
@@ -260,20 +266,24 @@ of endeavor.
 %%
 \begin{multicols}{3}    % 3 columns
 
-\ndsubsection{Planned integration}
-
-We will expose and interface to the datasets available from
-
+\ndsubsection{Planned and WiP}
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[\href{http://xnat.org}{XNAT}] widely used imaging informatics
   platform used by \phttp{HumanConnectome.org},
   \href{http://nitrc.org/ir}{NITRC-IR},
   \href{http://openfmri.org}{OpenfMRI} and others
-\item[\href{http://coins.mrn.org}{COINS}] web-based neuroimaging and
-  neuropsychology software suite hosting many neuroimaging datasets
-\item[\href{http://academictorrents.com}{Academic Torrents}]
-  collection of academic datasets delivered as
-  \href{http://en.wikipedia.org/wiki/BitTorrent}{Torrents}
+  (see \PR{1552})
+\item[Rich metadata] next (0.10) release will feature per-file metadata
+  interactions with metadata aggregated from variety of sources (audio
+  files, BIDS, EXIF, NIfTI, etc)
+\item[OSF, Zenodo, and Figshare support] ability to upload or export (as
+  archives) data to known portals of scientific data
+  (see \PR{1446}, \PR{1942})
+% \item[\href{http://coins.mrn.org}{COINS}] web-based neuroimaging and
+%  neuropsychology software suite hosting many neuroimaging datasets
+%\item[\href{http://academictorrents.com}{Academic Torrents}]
+%  collection of academic datasets delivered as
+%  \href{http://en.wikipedia.org/wiki/BitTorrent}{Torrents}
 \item[\href{http://neuro.debian.net}{NeuroDebian}] Through the joint
   venture with the \href{http://neuro.debian.net}{NeuroDebian}
   project, DataLad will also expose itself as a
@@ -281,6 +291,8 @@ We will expose and interface to the datasets available from
   possible to \emph{install} and \emph{upgrade} datasets using
   conventional tools such as \texttt{apt} and \texttt{aptitude}.
   Data \emph{installation} would become as easy as software installation.
+\item[\phttp{HumanConnectome.org}] anatomical, functional,
+  diffusion MRI data from 1,200 subjects
 \end{description}
 
 
@@ -299,44 +311,50 @@ Overall motto is \emph{Be Ready} and ...
 
 
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
+\item[Version your data:] even data close to bare origin might be
+  \emph{screwed} and require versioning:
+  \begin{itemize}[nolistsep,leftmargin=1pc,style=nextline]
+   \item use \href{https://github.com/nipy/heudiconv}{Heudiconv}
+     to streamline DICOM to NIfTI/BIDS conversion with DataLad
+     control
+  \item use DataLad (and git and
+    \href{http://git-annex.branchable.com}{Git-annex})
+    for managing your data or data you get from others.
+    Visit \url{http://datalad.org/features.html} for demos.
+%  \item consistently version older versions with the date in the
+%    suffix, \eg how \href{http://www.1000genomes.org}{1000genomes}
+%    project does
+  \item turn on versioning for your \href{http://aws.amazon.com/s3}{AWS S3}
+    bucket(s) (and/or crawl it into a DataLad dataset)
+  \end{itemize}
+
 \item[Stay legit:] clear up and state ahead ownership (copyright) and
   (public domain dedication) license for your dataset. Provision
   public sharing in your consent forms\\ \textbf{BEFORE} the data
   collection begins:\\ \url{https://open-brain-consent.readthedocs.org}
+
+\end{description}
+\vspace{27em}
+
+{\tiny \color{white}.}
+\columnbreak
+
+\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 
 \item[Keep detail:] keep original detail -- copies of acquisition
   protocols, exam cards, and the DICOMs (not only NIfTIs)
 
 \item[Be comprehensible:] adhere to a homogeneous files structure,
   adopt and extend if necessary some standard
-  (\eg\ openfmri). Consider providing dataset descriptor
-  (\eg\ 
- \href{http://www.w3.org/TR/2015/NOTE-hcls-dataset-20150514/}{W3C HCLS
- Dataset descriptors} or
- \url{http://dataprotocols.org/data-packages})
+  (\eg\ BIDS for neuroimaging or NWB for electrophysiological data).
+ %Consider providing dataset descriptor
+ % (\eg\ 
+ %\href{http://www.w3.org/TR/2015/NOTE-hcls-dataset-20150514/}{W3C HCLS
+ %Dataset descriptors} or
+ %\url{http://dataprotocols.org/data-packages})
 
 \item[Prepare to be reproduced:] analyze already pre-processed
   anonymized data% (where possible)
-
-\end{description}
-\vspace{27em}
-{\tiny \color{white}.}
-\columnbreak
-
-\begin{description}[nolistsep,leftmargin=1pc,style=nextline]
-
-\item[Version your data:] even data close to bare origin might be
-  \emph{screwed} and require versioning.  You could
-  \begin{itemize}[nolistsep,leftmargin=1pc,style=nextline]
-  \item use \href{http://git-annex.branchable.com}{Git-annex} for your
-    data
-  \item consistently version older versions with the date in the
-    suffix, \eg how \href{http://www.1000genomes.org}{1000genomes}
-    project does
-  \item turn on versioning for your \href{http://aws.amazon.com/s3}{AWS S3}
-    bucket(s)
-  \end{itemize}
-
 
 \item[Think about longevity:] Deposit datasets to some public community
   repository (\eg\ \href{http://openfmri.org}{OpenfMRI},
@@ -346,9 +364,6 @@ Overall motto is \emph{Be Ready} and ...
 
 \ndsubsection{How could you help \emph{DataLad}?}
 
-We have started the development (within both git-annex and DataLad) of
-necessary features and hope to deliver an initial functional prototype
-later this year.  Meanwhile we would appreciate if you
 \begin{description}[nolistsep,leftmargin=1pc,style=nextline]
 \item[Contribute]
 \url{http://github.com/datalad/datalad/pulls}
@@ -375,7 +390,7 @@ Foundation (\href{http://www.nsf.gov/awardsearch/showAward?AWD\_ID=1429999}{1429
 \vspace{1em}
 \hspace{1em}\includegraphics[width=0.4\columnwidth]{nsf1.jpg}
 \hfill
-\includegraphics[width=0.4\columnwidth]{bmbf_logo.jpg}\hspace{1em}
+\includegraphics[width=0.4\columnwidth]{bmbf.pdf}\hspace{1em}
 
 %\columnbreak
 \end{multicols}

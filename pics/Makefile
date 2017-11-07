@@ -44,7 +44,7 @@ ignore-%:
 %_tuned: %.svgtune %.svg
 	@echo "Splitting SVG using $<"
 # Use gqview to prevew svgs -- quite nice
-	@../tools/svgtune/svgtune $<
+	@svgtune $<
 # Touch it to adjust the timestamp so make does not think that we are
 # out of date later on
 	@touch "$@"
