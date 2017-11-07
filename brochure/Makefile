@@ -21,3 +21,6 @@ datalad-whiteboard.%:
 # %.pdf: %.svg @$(MAKE) -f ../Makefile $@
 
 %.pdf: %.svg; $(INKSCAPE) -f $< -A $@
+
+install: brochure_datalad.pdf
+	scp $< neurodebian:www/_files/
