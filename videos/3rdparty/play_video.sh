@@ -1,0 +1,1 @@
+mplayer -sub DataLad-Intensive2017.sbv DataLad-Intensive2017.mp4 -ass -ass-hinting 0 -ss 00:00:15 -ass-border-color 50505050 -ass-font-scale 1.3 -ass-force-style FontName=Arial,Default.Bold=1 -overlapsub -subfont-outline 5
