@@ -4,3 +4,6 @@
 [submodule "videos/onlinebrainintensive-2017"]
 	path = videos/onlinebrainintensive-2017
 	url = ./videos/onlinebrainintensive-2017
+[submodule "bernstein-2018-gofair"]
+	path = bernstein-2018-gofair
+	url = https://github.com/psychoinformatics-de/talk-datalad-gofair/
