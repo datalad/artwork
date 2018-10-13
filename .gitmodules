@@ -7,3 +7,6 @@
 [submodule "bernstein-2018-gofair"]
 	path = talks/bernstein-2018-gofair
 	url = https://github.com/psychoinformatics-de/talk-datalad-gofair/
+[submodule "talks/openneuro-2018"]
+	path = talks/openneuro-2018
+	url = http://github.com/psychoinformatics-de/talk-datalad-gofair
