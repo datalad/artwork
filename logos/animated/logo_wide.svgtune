@@ -1,0 +1,157 @@
+%file logo_wide.svg
+
+# Disable ALL layers
+layers style=display:none
+layer label=background style=display:inline
+
+# just "Data"
+layer label=data style=display:inline
+layer label=solid style=display:inline
+layer label=lad_L style=display:inline
+layer label=lad_L_0 style=display:inline
+%save frame00
+
+# Lad "l" comes in as the result of a merge
+layer label=lad_L_0 style=display:none
+layer label=lad_L_1 style=display:inline
+%save frame01
+
+layer label=lad_L_1 style=display:none
+layer label=lad_L_2 style=display:inline
+%save frame02
+
+layer label=lad_L_2 style=display:none
+layer label=lad_L_3 style=display:inline
+%save frame03
+
+layer label=lad_L_3 style=display:none
+layer label=lad_L_4 style=display:inline
+%save frame04
+
+layer label=lad_L_4 style=display:none
+layer label=lad_L_5 style=display:inline
+%save frame05
+
+layer label=lad_L_5 style=display:none
+%save frame06
+
+
+# Lad "a" emerged as an iterative process
+#layer label=lad_A style=display:inline
+layer label=lad_A_0 style=display:inline
+%save frame07
+
+layer label=lad_A_0 style=display:none
+layer label=lad_A_1 style=display:inline
+%save frame08
+
+layer label=lad_A_1 style=display:none
+layer label=lad_A_2 style=display:inline
+%save frame09
+
+layer label=lad_A_2 style=display:none
+layer label=lad_A_3 style=display:inline
+%save frame10
+
+layer label=lad_A_3 style=display:none
+layer label=lad_A_4 style=display:inline
+%save frame11
+
+# layer 4 stays on till circle complete
+layer label=lad_A style=display:inline
+layer label=lad_A_5 style=display:inline
+%save frame12
+layer label=lad_A_5 style=display:none
+layer label=lad_A_6 style=display:inline
+%save frame13
+layer label=lad_A_6 style=display:none
+layer label=lad_A_7 style=display:inline
+%save frame14
+layer label=lad_A_7 style=display:none
+layer label=lad_A_8 style=display:inline
+%save frame15
+layer label=lad_A_8 style=display:none
+layer label=lad_A_9 style=display:inline
+%save frame16
+layer label=lad_A_9 style=display:none
+layer label=lad_A_10 style=display:inline
+%save frame17
+layer label=lad_A_10 style=display:none
+layer label=lad_A_11 style=display:inline
+%save frame18
+layer label=lad_A_11 style=display:none
+layer label=lad_A_12 style=display:inline
+layer label=lad_D_prep0 style=display:inline
+%save frame19
+layer label=lad_A_12 style=display:none
+layer label=lad_A_4 style=display:none
+layer label=lad_D_prep0 style=display:none
+layer label=lad_D_prep1 style=display:inline
+%save frame20
+layer label=lad_D_prep1 style=display:none
+layer label=lad_D_prep2 style=display:inline
+%save frame21
+layer label=lad_D_prep2 style=display:none
+layer label=lad_D_prep3 style=display:inline
+%save frame22
+
+
+# Lad "d" appears as a publication rocket
+layer label=lad_D_prep3 style=display:none
+layer label=lad_D_start style=display:inline
+layer label=lad_D_4 style=display:inline
+layer label=lad_D style=display:inline
+%save frame25
+layer label=lad_D_start style=display:none
+layer label=lad_D_4 style=display:none
+layer label=lad_D_0 style=display:inline
+layer label=lad_D_5 style=display:inline
+%save frame26
+layer label=lad_D_0 style=display:none
+layer label=lad_D_1 style=display:inline
+%save frame27
+layer label=lad_D_1 style=display:none
+layer label=lad_D_2 style=display:inline
+%save frame28
+
+layer label=lad_D_2 style=display:none
+layer label=lad_D_3 style=display:inline
+%save frame29
+layer label=lad_D_3 style=display:none
+layer label=lad_D_5 style=display:inline
+%save frame30
+layer label=lad_D_5 style=display:none
+layer label=lad_D_6 style=display:inline
+%save frame31
+layer label=lad_D_6 style=display:none
+layer label=lad_D_7 style=display:inline
+%save frame32
+
+layer label=lad_D_7 style=display:none
+%save frame33
+%save frame34
+%save frame35
+%save frame36
+
+
+# build compact logo
+layer label=L_1 style=display:inline
+%save frame37
+layer label=L_1 style=display:none
+layer label=L_2 style=display:inline
+%save frame38
+layer label=L_2 style=display:none
+layer label=L_3 style=display:inline
+%save frame39
+layer label=L_3 style=display:none
+layer label=L style=display:inline
+%save frame40
+%save frame41
+%save frame42
+%save frame43
+%save frame44
+
+layer label=solid style=display:none
+%save frame45
+
+
