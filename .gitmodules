@@ -10,3 +10,6 @@
 [submodule "talks/openneuro-2018"]
 	path = talks/openneuro-2018
 	url = http://github.com/psychoinformatics-de/talk-datalad-gofair
+[submodule "talks/2019-mila"]
+	path = talks/2019-mila
+	url = http://github.com/datalad/talk-openneuro-2018
