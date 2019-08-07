@@ -1,0 +1,2 @@
+*.svg* annex.largefiles=nothing
+.git* annex.largefiles=nothing
