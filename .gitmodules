@@ -13,3 +13,8 @@
 [submodule "talks/2019-mila"]
 	path = talks/2019-mila
 	url = http://github.com/datalad/talk-2019-mila
+[submodule "talks/talk-fosdem-2020"]
+	path = talks/talk-fosdem-2020
+	url = https://github.com/datalad/talk-fosdem-2020
+	branch = master
+	datalad-id = 12eab246-4277-11ea-b81b-f0d5bf7b5561
