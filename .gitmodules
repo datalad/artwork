@@ -13,6 +13,9 @@
 [submodule "talks/2019-mila"]
 	path = talks/2019-mila
 	url = http://github.com/datalad/talk-2019-mila
+[submodule "talks/2022-abcd"]
+	path = talks/2022-abcd
+	url = http://github.com/datalad/talk-2022-abcd
 [submodule "talks/talk-fosdem-2020"]
 	path = talks/talk-fosdem-2020
 	url = https://github.com/datalad/talk-fosdem-2020
