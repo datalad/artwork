@@ -24,3 +24,6 @@
 [submodule "comics/whiteboard-comics"]
 	path = comics/whiteboard-comics
 	url = https://github.com/jsheunis/whiteboard-comics.git
+[submodule "posters/ohbm-2022-datacat"]
+	path = posters/ohbm-2022-datacat
+	url = https://github.com/jsheunis/ohbm-2022
